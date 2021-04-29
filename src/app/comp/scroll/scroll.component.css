@@ -1,0 +1,211 @@
+/* .example-viewport {
+    height: 200px;
+    width: 200px;
+    border: 1px solid black;
+  } */
+  
+  .example-item {
+    /* height: 9%; */
+    /* height:9vh;  */
+    /* height:50px; */
+    height: 9vmin;
+    margin: 2em;
+  }
+  .example-viewport {
+    /* height:99%; */
+    /* height:605px; */
+    height:99vmin;
+    width:20% ;
+    border: 1px solid black;
+    scrollbar-width: none;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    /* margin: 3rem;  */
+    /* display:grid; */
+
+  }
+  
+  .example-item-detail {
+    height: 18px;
+    overflow: scroll;
+  }
+/*  */
+  
+  .example-viewport .cdk-virtual-scroll-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+}
+ 
+  /*  */
+  .example-alternate {
+    background: rgba(127, 127, 127, 0.3);
+  }
+  .active-fragment{
+      position: sticky;
+  }
+  .active-fragment{
+    position: fixed;
+    margin-left: 250px;
+    z-index: 5;
+    background-color: gold;
+  }
+  .scrollToRight{
+    margin-left: 1500px;  
+    position: fixed;
+    z-index: 50;
+    background-color: greenyellow;
+  }
+  .first-scroll{
+    position: fixed;
+    z-index: 50;
+    background-color: greenyellow;
+  }
+  .first-scroll::marker{
+   scrollbar-arrow-color: darkred;
+   content: "{";
+   color:dodgerblue;
+  }
+  .first-scroll div h3::marker{
+    /* scrollbar-arrow-color: darkred; */
+    content: "{";
+    color:dodgerblue;
+    /* cursor: pointer; */
+   }
+   .first-scroll div h3:hover{
+    /* scrollbar-arrow-color: darkred; */
+    content: "{";
+    color:dodgerblue;
+    cursor: pointer;
+   }
+
+ul li::marker{
+  color:green;
+  background-color: khaki;
+  font-weight: 900;
+}
+ul li:hover::marker{
+  color:midnightblue;
+  font-weight: 900;
+}
+/* .mainContainer{
+  overflow: auto;
+  white-space:nowrap;
+} */
+  .mainContainer{
+    /* height: calc(100vh); */
+  /* overflow-x: scroll; */
+  /* position: absolute; */
+/* overflow: scroll;
+overscroll-behavior-x:inherit; */
+ overscroll-behavior: inherit; 
+display:inline-flexbox;
+overflow: auto;
+/* white-space: nowrap; */
+  }
+
+  .activeIndex{
+    background-color: indigo;
+    color:lightgoldenrodyellow;
+    font-weight: 900;
+  }
+  .activeIndex::marker{
+    background-color: rgb(221, 38, 13);
+    color: yellow;
+    font-weight: 900;
+  }
+  
+  /* .router-link-active
+  {background-color: orange;
+  color:green;} */
+  /* .cdk-scroll-class{
+    min-height: 100%;
+  } */
+  router-link-active{
+      background-color: darkorange;
+  }
+/* h1::marker{
+display: list-item;
+content:"#";
+
+} */
+h1{
+    /* counter-increment: h3; */
+    display: list-item;
+    /* display: -moz-marker; */
+  }
+  
+  h1::marker {
+    display: list-item;
+    content: "*" ;
+    /* counter(h3) " "; */
+    color: lightsalmon;
+    font-weight: bold;
+    /* list-style:square */
+  }
+  
+  .headerMarker {
+    /* counter-reset: h3; */
+    /* line-height: 1.4;
+    font-family: system-ui;*/
+    margin: 3rem; 
+  }
+  h3{
+    /* counter-increment: h3; */
+    display: list-item;
+  }
+  
+  h3::marker {
+    display: list-item;
+    content: "*" ;
+    /* counter(h3) " "; */
+    color: lightsalmon;
+    font-weight: bold;
+    /* list-style:square */
+  }
+  router-link-active{
+    background: white;
+    color:green;
+    border:indigo solid 2px;
+  }
+
+  .hashItem{
+    background-color: rgb(233, 220, 202);
+  }
+
+
+  /* making scroll bar always visible
+  https://stackoverflow.com/questions/54664294/how-to-make-scrollbar-always-visible-in-angular-material */
+
+
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+  overflow: scroll;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, .5);
+  /* -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5); */
+  /* -webkit-border-image: 2%; */
+}
+.example-viewport ::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+  overflow:scroll;
+  /* display:-moz-box;   this is working */
+  /* display: -moz-marker; */
+  /* display:-webkit-inline-flex; */
+  /* display:-moz-grid-group; */
+  display:-moz-box;
+  /* flex-direction: row; */
+  /* overflow: scroll; */
+}
+/* .example-viewport::-webkit-resizer{
+  display: inline-flex;
+  flex-direction: column;
+  overflow: scroll;
+} */

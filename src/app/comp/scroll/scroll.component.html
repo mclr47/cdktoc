@@ -1,0 +1,1586 @@
+<!-- <p>scroll works!</p> -->
+<!-- <div class="headerMarker">
+<h1>testing ::marker</h1>
+</div> -->
+
+
+      <!-- *** -->
+      <div class="mainContainer">
+        <div class="active-fragment">
+            <!-- Active Fragment: {{activeFragment$ | async}}<br> -->
+            Router active fragment|async::: {{this.activatedRoute.fragment | async}}<br>
+            <!-- SnapShot: {{this.activatedRoute.snapshot.fragment.valueOf()}}<br> -->
+            <!-- Window.location.hash.valueOf().toString() :{{windowLocation}}<br> -->
+               <!-- active fragment from router subscription  :  {{activatedRouteFragment | async}}  -->
+            <br>
+            spy hash :{{this.spyHash.hashName}}
+            <br>
+            Official angular: {{this.getCurrentHash()}}
+            <br>
+            >>>>>this.location.getState()  : {{this.getCurrentHash()}}
+            <br>
+            ActivatedRoute.SnapShot.Fragment : {{this.activatedRoute.snapshot.fragment}}
+            <br>
+            hashIntersectionObserver : : {{hashIntersectionObserver|async}}
+            <br>
+            Index : {{indexFocus}}
+          </div>
+        <!-- <p>first scroll</p> -->
+        <!-- <cdk-virtual-scroll-viewport class="example-viewport first-scroll"
+        (mouseenter)="updateCurrentElement('scrollOne')" (scroll)="updateVerticalScroll($event)" #scrollOne> -->
+        <cdk-virtual-scroll-viewport class="example-viewport first-scroll" autosize
+        [itemSize]="70" minBuffer="70px"
+        maxBuffer="840px">
+        <!-- minBufferPx="400"  maxBufferPx="425"
+           #scrollOne> -->
+           <!-- autosize -->
+           <!-- minBufferPx="200"  maxBufferPx="300" -->
+           <!-- [itemSize]="11" or [itemSize]="55"-->
+            <div *cdkVirtualFor="let item of items;
+                                 let index = index; templateCacheSize: 8" 
+                                 class="example-item">
+                <!-- <h3  [ngClass]="{activeIndex: index==(activeScrollIndex|async)}" -->
+                  <h3  [ngClass]="{activeIndex: index==this.indexOfCurrentHash}"
+                  routerLink="scroll"
+        [routerLinkActive]="['router-link-active','routerLinkActiveScroll(index)']"
+             fragment="{{this.scrollToPage[index]}}"
+             [routerLinkActiveOptions]="{exact:true}">
+             <!-- appObserveHashList (currentHash)="currentHashOutput($event)"> -->
+            
+                <!-- appHashActive [idexToc]="index" -->
+                {{item}}</h3>
+              </div>
+              <!-- preserveFragment -->
+              <!-- [routerLinkActive]="router-link-active routerLinkActiveScroll(index)" -->
+            <!-- <p>first scroll</p> -->
+    </cdk-virtual-scroll-viewport >
+      <!-- *** -->
+    <!-- <p>first scroll</p> -->
+    <!-- <cdk-virtual-scroll-viewport class="example-viewport first-scroll"
+    (mouseenter)="updateCurrentElement('scrollOne')" (scroll)="updateVerticalScroll($event)" #scrollOne>  -->
+    <!-- <cdk-virtual-scroll-viewport class="example-viewport first-scroll" [itemSize]="55"
+    minBufferPx="30" class="cdk-scroll-class"
+       #scrollOne>-->
+       <!-- [itemSize]="11" -->
+        <!-- <div *cdkVirtualFor="let item of items;
+                             let index = index;" class="example-item"> -->
+         <!-- <div *cdkVirtualFor="let item of scrollToPage;
+                             let index = index;" class="example-item">                   -->
+    <!-- <h3 [ngClass]="{activeIndex: index==(activeScrollIndex|async)}"
+    >{{item}} </h3> -->
+      <!-- <h3 routerLink="scroll"
+        [routerLinkActive]="router-link-active"
+             [routerLink]="['/scroll']"
+             fragment="item"
+             [routerLinkActiveOptions]="{exact:
+                true}">{{item}}</h3> -->
+            <!-- <a routerLink="./scroll" routerLinkActive="router-link-active"  fragment="item"
+            [routerLinkActiveOptions]="{exact:
+                true}">{{item}}</a> -->
+          <!-- </div>--->
+        <!-- </cdk-virtual-scroll-viewport >  -->
+
+<!--  -->
+<div appObserveHashList (currentHash)="emitHash($event)">
+<!-- hashInput="aaa" -->
+<div id="aaa"
+appObserveHashItem #intersection="intersection" 
+(currentHash)="emitHash($event)" >
+ <!-- [ngClass]="{hashItem: intersection.IS_INTERSECTING}"> -->
+ <!-- appHashSpy 
+(inFocusViewEventEmitter)="syncWindowToCdk($event)"> -->
+ <!-- (inFocusViewEventEmitter)="syncWindowToCdk($event,'aaa')"> -->
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    AÂĀaaaæ aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    
+    </div>
+    <!-- hashInput="bbb" -->
+<div id="bbb" 
+appObserveHashItem #intersection="intersection"
+(currentHash)="emitHash($event)" >
+ <!-- [ngClass]="{hashItem: intersection.IS_INTERSECTING}"> -->
+<!-- appHashSpy  
+ (inFocusViewEventEmitter)="syncWindowToCdk($event)"> -->
+ <!-- (inFocusViewEventEmitter)="syncWindowToCdk($event,'bbb')"> -->
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBbbbBBBBBBBBBBBbbBBBBBBBBBBBBBABBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    </div>
+    <!-- hashInput="ccc" -->
+<div id="ccc"
+appObserveHashItem #intersection="intersection"
+(currentHash)="emitHash($event)" >
+ <!-- [ngClass]="{hashItem: intersection.IS_INTERSECTING}"> -->
+<!-- appHashSpy  
+ (inFocusViewEventEmitter)="syncWindowToCdk($event)"> -->
+ <!-- (inFocusViewEventEmitter)="syncWindowToCdk($event,'ccc')"> -->
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        
+        
+        </div> 
+ hashInput="ddd"
+<div id="ddd"
+appObserveHashItem #intersection="intersection"
+(currentHash)="emitHash($event)" >
+ <!-- [ngClass]="{hashItem: intersection.IS_INTERSECTING}"> -->
+<!-- appHashSpy  
+ (inFocusViewEventEmitter)="syncWindowToCdk($event)"> -->
+ <!-- (inFocusViewEventEmitter)="syncWindowToCdk($event,'ddd')"> -->
+  DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD  DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD  DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD  DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+
+  DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD  DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD  DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD  DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+  THE PROBLEM OF DEFINING MYTH
+
+  The establishment of a single, comprehensive definition of myth has proved impossible to attain. No one definition can satisfactorily embrace all the various kinds of stories that can legitimately be classed as myths on the basis of one criterion or another. The attempt to define myth in itself, however intractable a proposition, serves to highlight the very qualities of the stories that make them so different from one another.
+  
+  THE MEANING OF THE WORD MYTH
+  
+  “Myth” is derived from the Greek word mythos, which can mean tale, or story, and that is essentially what a myth is: a story. For many, such a general definition proves to be of no real service, and some would add the qualification that a myth must be a “traditional” tale or story, one that has proved of so lasting a value that it is continually retold, through whatever medium the artist/storyteller chooses to employ. For further clarification, distinctions are often made between “myth,” i.e., “true myth” or “myth proper,” and “saga” or “legend,” and “folktale.”
+  
+  MYTH, SAGA OR LEGEND, AND FOLKTALE
+  
+  Myth: not a comprehensive term for all stories but only for those primarily concerned with the gods and their relations with mortals.
+  
+  Saga or legend: a story containing a kernel of historical truth, despite later fictional accretions.
+  
+  Folktale: a story, usually of oral origin, that contains elements of the fantastic, often in the pattern of the adventure of a hero or a heroine. Its main function is entertainment, but it can also educate with all sorts of insights. Under this rubric may be classed fairytales, which are full of supernatural beings and magic and provide a more pointed moral content.
+  
+  Rarely, if ever, do we find in Greek and Roman mythology, a pristine, uncontaminated example of any one of these types of story.
+  
+  MYTH AND TRUTH
+  
+  The most common association of the words “myth” and “mythical” is with what is incredible and fantastic. How often do we hear the expression, “It’s a myth,” uttered in derogatory contrast with such laudable concepts as reality and the facts? As opposed to the discoveries of science, whose truths continually change, myth, like art is eternal. Myth in a sense is the highest reality, and the thoughtless dismissal of myth as fiction or a lie is the most barren and misleading definition of all. Myth serves to interpret the whole of human experience and that interpretation can be true or fictitious, valuable or insubstantial, quite apart from its historical veracity.
+  
+  MYTH AND RELIGION
+  
+  The study of myth must not and cannot be separated from the study of religion, religious beliefs, or religious rituals. No mythologist has been more eloquent than Mircea Eliade in his appreciation of the sacredness of myth and the holy and timeless world that it embodies.
+  
+  MYTH AND ETIOLOGY
+  
+  An etiological interpretation of myth demands that a true myth must give the aitia, or cause or reason, for a fact, a ritual practice, or an institution. Thus narrowly defined, etiology imposes too limiting and rigid a criterion for definition. On the other hand, if one broadens the concept of the aitia of a myth to encompass any story that explains or reveals something or anything, an etiological approach offers one of the most fertile ways of interpreting myth, although it cannot really define it. What story can avoid offering some kind of explanation or revelation? Is the best general definition of myth, after all, a traditional story?
+  
+  RATIONALISM, METAPHOR, AND ALLEGORY
+  
+  Euhemerism: an attempt to rationalize classical mythology, attributed to Euhemerus (ca. 300 B. C.). He claimed that the gods were great men of old who had become deified.
+  
+  Allegory: a sustained metaphor. The allegorical approach to mythology is favored by the anti-rationalists, who interpret the details of myth as symbols of universal truth.
+  
+  Allegorical nature myths: for Max Müller in the nineteenth century, myths are to be defined as explanations of meteorological and cosmological phenomena. Müller’s theory is too limited. Some Greek and Roman myths, but by no means all, are concerned with nature.
+  
+  MYTH AND PSYCHOLOGY
+  
+  The theories of Freud and Jung are fundamental and far-reaching in their influence, and although continually challenged, provide the most searching tools for a profound, introspective interpretation of mythology.
+  
+  Freud.
+  
+  Freud’s most influential ideas for the interpretation of myth center on psychosexual development, the theory of the unconscious, the interpretation of dreams, and the Oedipus complex.
+  
+      Oedipus Complex
+  
+  Developed in a work that attempts to explain the particularly uneasy and timeless dramatic import of Sophocles’ Oedipus Tyrannos, the theory of the Oedipus complex holds that a male child’s first sexual feelings are directed towards the mother with the concomitant arousal of jealousy and hatred towards the rival for those affections, the father. The female version has been identified by Carl Jung as the Electra complex, in which the daughter's love is towards the father with hatred of the mother.
+  
+      Dreams
+  
+  Freud saw dreams as the expression of repressed or concealed desires. The “dream-work” of sleep has three basic functions: to condense elements; to displace elements, by altering them; and to represent elements through symbols. In this regard, symbols of dreams can work in much the same way as the symbols of myths.
+  
+  Carl Jung
+  
+      Collective Unconscious
+  
+  Jung went beyond the connection of myths and dreams with the individual to interpret myths as the projection of what he called the “collective unconscious,” that is, the revelation of the continuing psychic tendencies of a society. Jung made an important distinction between the personal unconscious, concerning matters of an individual’s own life, and the collective unconscious, embracing political and social questions of the group.
+  
+      Archetypes
+  
+  Myths contain images or “archetypes,” according to Jung, traditional expressions of collective dreams, developed over thousands of years, of symbols upon which the society as a whole has come to depend. These archetypes, revealed in peoples' tales, establish patterns of behavior that can serve as exemplars, as when we note that the lives of many heroes and heroines share a remarkable number of similar features that can be identified as worthy of emulation. Similarly, other kinds of concept are to be classified among the many and varied types of Jungian archetype embedded in our mythic heritage, e.g., the great earth mother, the supreme sky-god, the wise old man, the idealistic young lover.
+  
+  MYTH AND SOCIETY
+  
+  Myth and Ritual
+  
+      J. G. Frazer and Jane Harrison
+  
+  Sir J. G. Frazer’s The Golden Bough remains a pioneering monument in its attempts to link myth with ritual. Similarly, the works of Jane Harrison are of seminal importance. Both Frazer and Harrison provide a wealth of comparative data, and both may be subjected to the same critical reservations about the validity of their ritualistic interpretations and their analogies between myths of primitive tribes and classical myths. Yet both established fundamental approaches that endure to this day.
+  
+      Robert Graves
+  
+  The justly renowned novelist and poet Robert Graves has written an influential treatment of Greek myths, full of valuable factual information, accompanied by dubious and idiosyncratic interpretations. He definition of true myth as a kind of shorthand in narrative form for ritual mime is far too restrictive. He separates myth from tales of other kinds by wisely focusing upon the literary distinctions to be found in a variety of stories.
+  
+  MYTH AS SOCIAL CHARTERS
+  
+      Bronislav Malinowski
+  
+  Bronislav Malinowski’s work as an anthropologist among the Trobriand Islanders (off New Guinea) led to his identification of the close connection between myths and social institutions. Myths are related to practical life and explain existing practices, beliefs, and institutions by reference to tradition; they are “charters” of social customs and beliefs.
+  
+  THE STRUCTURALISTS
+  
+      Claude Lévi-Strauss
+  
+  The structuralist Claude Lévi-Strauss sees myth as mode of communication in which the structure or interrelationships between the parts, rather than the individual elements alone, establish meaning. In the belief that human behavior is patterned and that the human mind has a binary structure, Lévi-Strauss argues that the creations of the mind, including myths in particular, partake of a binary structure. One of the principal aims of myth is to negotiate between binary pairs or pairs of opposites (e.g., raw/cooked, life/death, hunter/hunted, nature/culture, male/female, inside/outside), and to resolve them. Since the meaning of a myth is “coded” in its structure, all versions of a myth have the capacity to be equally valid.
+  
+      Vladimir Propp
+  
+  Vladimir Propp, a Russian folklorist, developed the structuralist approach to myth before Lévi-Strauss by analyzing a select group of tales with similar features and isolating the recurrent, linear structure manifest in them. In this pattern Propp identified 31 functions or units of action, which have been termed motifemes. All these motifemes need not be present in one tale, but those that are will always appear in the same sequential order.
+  
+  This comparative approach to mythology has proven useful in analyzing a wide range of seemingly dissimilar tales across many different cultures, which satisfy the sequential pattern, such as those about a hero’s quest or, in particular, the thematic details concerning his mother and his birth, which Walter Burkert has broken down into five motifemes:
+  
+      The girl leaves home.
+      The girl is secluded.
+      She becomes pregnant by god.
+      She suffers.
+      She is rescued and gives birth to a son.
+  
+  The understanding of classical mythology can be made both easier and more purposeful if underlying structures are perceived and arranged logically. The recognition that these patterns are common to stories told throughout the world is also most helpful for the study of comparative mythology.
+  
+      Walter Burkert
+  
+  Walter Burkert has attempted a synthesis of various theories about the nature of myths, most important being those having a structuralist and a historical point of view. To Burkert, of great significance is the fact that a myth has a “historical dimension.” In its development a myth may incorporate “successive layers” of narrative, each of which has addressed the particular needs of a particular storyteller with a particular audience in a particular time. To support his synthesis, he has developed four theses:
+  
+      Myth belongs to the more general class of traditional tales.
+      The identity of a traditional tale is to be found in a structure of sense within the tale itself.
+      Tale structures, as a sequence of motifemes, are founded on basic biological or cultural programs of actions.
+      Myth is a traditional tale with secondary, partial reference to something of collective importance.
+  
+  COMPARATIVE STUDY AND CLASSICAL MYTHOLOGY
+  
+  Oral and Literary Myth. Many insist that a true myth must be oral and anonymous. The tales told in primitive societies are the only true myths, pristine, timeless, and profound. The written word brings contamination and specific authorship. We disagree with such a narrow definition of mythology. Myth need not be just a story told orally. It can be danced, painted, and enacted, and this is, in fact, what primitive people do.
+  
+  Myth is no less a literary than an oral form. Despite the successive layers that have been grafted onto Greek and Roman stories and their crystallization in literary works of the highest sophistication, comparative mythologists have been able to isolate the fundamental characteristics that classical myths share with other mythologies, both oral and literate.
+  
+  Joseph Campbell. A comparative mythologist, perhaps best known for his series of PBS interviews with Bill Moyers, Campbell did much to popularize the comparative approach to mythology. Though his attention was largely devoted to myths from other traditions, many of his observations, as he himself was well aware, can be profitably applied to classical mythology.
+  
+  Feminism, Homosexuality, and Mythology
+  
+      Feminism
+  
+  Feminist critical theory focuses upon the psychological and social situation of female characters in terms of the binary nature of human beings, especially in the opposition (or complementary relationship) of female and male. Feminist scholars have used the critical methods of deconstruction to interpret myths from their points of view about political, social, and sexual conflict between men and women in the ancient and modern world. Their conclusions are sometimes determined by controversial reconstructions of two major topics: the treatment and position of women in ancient Greece and the theme of rape.
+  
+      Women in Greek Society
+  
+  Here are four out of many observations that could be made about the treatment and position of women in Greek society:
+  
+      Women were citizens of their communities, unlike noncitizens and slaves—a very meaningful distinction. They did not have the right to vote. No woman anywhere won this democratic right until 1920.
+      The role of women in religious rituals was fundamental; and they participated in many festivals of their own, from which men were excluded.
+      A woman’s education was dependent on her future role in society, her status or class, and her individual needs (as was that of a man).
+      The cloistered, illiterate, and oppressed creatures often adduced as representative of the status of women in antiquity are at variance with the testimony of all the sources: literary, artistic, and archaeological.
+  
+      The Theme of Rape
+  
+  What are we today to make of classical myths about ardent pursuit and amorous conquest? Are they love stories or are they all, in the end, horrifying tales of victimization and rape?
+  
+  The Greeks and the Romans were obsessed with the consequences of blinding passion, usually evoked by Aphrodite, Eros, or Dionysus and his satyrs, and of equally compulsive chastity, epitomized by a ruthless Artemis or one of her nymphs. The man usually, but by no means always, defines lust and the woman chastity. Often there is no real distinction between the love, abduction, or rape of a woman by a man and of a man by a woman.
+  
+  Stories about abduction, so varied in treatment and content, have many deeper meanings embedded in them, e.g., social, psychological, and very often religious. The supreme god Zeus may single out a chosen woman to be the mother of a divine child for a grand purpose, and the woman may or may not be overjoyed. Thus the very same tale may embody themes of victimization, sexual love, and spiritual salvation, one or all of these conflicting eternal issues or more. Everything depends on the artist and the person responding to the work of art: each individual’s gender, sexual orientation, age, experience or experiences, politics, and religion. There is no one “correct” interpretation, just as there is no one “correct” definition of a myth.
+  
+  These stories from antiquity to the present have evoked so wide a range of responses that they should not be subjected to a criticism reduced to a simple harangue about the mistreatment of women—or of men. Romantic critics in the past sometimes chose not to see the rape; many today choose to see nothing else.
+  
+      Homosexuality
+  
+  Homosexuality was accepted and accommodated as a part of life, certainly in Athens. There were no prevailing hostile religious views to condemn it as a sin. Yet there were serious moral codes of behavior, mostly unwritten, that had to be followed to confer respectability upon homosexual relationships and individuals who were homosexual.
+  
+  Homosexuality may be found as a major theme in some stories, e.g., Zeus and Ganymede, Poseidon and Pelops, Apollo and Hyacinthus, Apollo and Cyparissus, Achilles and Patroclus, Orestes and Pylades, and Nisus and Euryalus. Thus Greek and Roman mythology embraces beautifully the themes of homosexuality (and bisexuality) but, overall, it reflects the dominant concerns of a heterosexual society from the Olympian family on down.
+  
+  Female homosexuality in Greek and Roman society and mythology is as important a theme as male homosexuality but it is not nearly as visible. Sappho, a lyric poetess from the island of Lesbos (sixth century B.C.), perhaps offers the most overt evidence.
+  
+  SOME CONCLUSIONS AND A DEFINITION OF CLASSICAL MYTH
+  
+  We have provided a representative (and by no means exhaustive) sampling of influential definitions and interpretations that can be brought to bear on classical mythology. It should be remembered that no one theory suffices for a deep appreciation of the power and impact of all myths. Certainly the panorama of classical mythology requires an arsenal of critical approaches.\
+  
+  Let us end with a definition of classical mythology that emphasizes its eternal qualities, which have assured a miraculous afterlife. It may be that a sensitive study of the subsequent art, literature, drama, music, dance, and film, inspired by Greek and Roman themes and created by genius, offers the most worthwhile interpretative insights of all.
+  
+  A classical myth is a story that, through its classical form, has attained a kind of immortality because its inherent archetypal beauty, profundity, and power have inspired rewarding renewal and transformation by successive generations.
+  
+  Legal Notice | Privacy Policy | Cookie Policy
+  Please send comments or suggestions about this Website to custserv.us@oup.com         
+</div>   
+<!-- hashInput="eee"  -->
+<div id="eee"
+appObserveHashItem #intersection="intersection"
+(currentHash)="emitHash($event)" >
+ <!-- [ngClass]="{hashItem: intersection.IS_INTERSECTING}"> -->
+<!-- appHashSpy 
+(inFocusViewEventEmitter)="syncWindowToCdk($event)"> -->
+ <!-- (inFocusViewEventEmitter)="syncWindowToCdk($event,'eee')"> -->
+  EeeeeeeeeeeeeEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+  EeeeeeeeeeeeeEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+     on April 6, 2021. For personal use only. 
+            o other uses without permission.  Copyright © 2021 Massachusetts Medical Society. All rights reserved. 
+            Myth Summary
+            Chapter 2: Historical Background of Greek Mythology
+            
+            EARLY GREECE AND THE AEGEAN
+            
+            The study of classical mythology, especially Greek legend or saga with its basis in historical fact, is enhanced by a survey of the history of Greece in the Bronze Age, our knowledge of which has continually been expanded since the time of Heinrich Schliemann.
+            
+            Heinrich Schliemann (1822–1890), Founder of Modern Archaeology. Schliemann fervently believed in the historicity of Homer’s picture of the age of heroes and amassed a great fortune before he turned to archaeological excavation to prove the truth of his seemingly romantic convictions. His extended excavations at Troy, Mycenae, and Tiryns, begun in the 1870s, confirmed that these cities had achieved a stature in wealth, power, and influence that accords well with Homer's depiction of the Mycenaean world.
+            
+            Sir Arthur Evans in Crete. Subsequently the archaeologist Sir Arthur Evans discovered the Bronze Age civilization that existed on the island of Crete. In 1899 he began his excavations at Cnossus, the center of power for the legendary King Minos, and thus the period of the Bronze Age in Crete is designated as “Minoan.”
+            
+            A WORKABLE THUMBNAIL CHRONOLOGY
+            
+                Stone Age
+            
+            Paleolithic (Old Stone Age) before 70,000 B. C.
+            Neolithic (New Stone Age) ca. 6,000–3,000 B. C.
+            The Bronze Age (named Minoan for Crete, Cycladic for the Cyclades, the islands of the Aegean, and Helladic for mainland Greece, Hellas).
+            
+                Early Bronze Age (3000–2000 B. C.)
+            
+            Early Minoan
+              
+            
+            Early Cycladic
+              
+            
+            Early Helladic
+            
+             
+            
+                Middle Bronze Age (2000–1600 B. C.)
+            
+            Middle Minoan
+              
+            
+            Middle Cycladic
+              
+            
+            Middle Helladic
+            
+             
+            
+                Late Bronze Age (1600–1100 B. C.)
+            
+            Late Minoan
+              
+            
+            Late Cycladic
+              
+            
+            Late Helladic (also called Mycenaean because of the powerful city of Mycenae)
+            
+            Paleolithic Age. Greece was inhabited at this time, but our knowledge remains scanty.
+            
+            Neolithic Age. A migration of people from east and north of Greece settled into agricultural communities to judge from the archaeological remains: the foundations of dwellings, pottery, tools, and graves. The presence of small female “fetishes” or icons with exaggerated feminine characteristics have fostered the notion that this civilization worshiped a mother goddess. Smaller numbers of male statuettes have been interpreted by some as her lesser male consort.
+            
+            Bronze Age. The Bronze Age followed the Neolithic period with inhabitants moving into Greece, Crete and Cyclades from the east. To these peoples are attributed the construction of Minoan civilization on Crete.
+            
+            Minoan Civilization. Named after the legendary king Minos, Minoan civilization reached its zenith during the Late Bronze Age (1600–1100 B. C.). The large palatial complexes (especially the one at Cnossus) that have been unearthed reveal a sophisticated and wealthy civilization. Excavations at Cnossus and Phaestus confirm the historical and mythological tradition that Minoan Crete by its control of the sea extended a cultural hegemony throughout the Aegean islands and mainland Greece and support the interpretation that the mythological stories about King Minos and Theseus’ slaying of the Minotaur in its labyrinth as a kind of quasi-historical remembrance. The collusion of the archaeological record and legend has continued to fascinate: the importance of the bull motif, especially provocative in the frescoes that depict the bull-leaping ritual or contest; the double-headed axe, or labrys, and its connection with the non-Greek word labyrinth; the complexity of the palace of Cnossus, suggesting a labyrinthine structure; the significance of the fertility mother goddess; the exaction of tribute by an ascendant Cretan power from lesser Greek states.
+            Cretan power was undone by about 1400 B. C., though there is no consensus regarding the exact reasons. Generally speaking, scholars find themselves divided between those who hold that the Mycenaean Greeks assumed control over Crete and those who do not. The former hypothesis seems the more likely.
+            For some, the cause of the eclipse of Cretan power is to be found in the volcanic eruption on the island of Thera (modern Santorini, some seventy miles northwest of Crete), though the archaeological remains seem to date the destruction of the island earlier than that of Crete. Some scholars also see in the eruption of Thera and the destruction of its sophisticated culture the seeds of Plato’s myth of the destruction of Atlantis in his Critias and Timaeus.
+            
+            The Mycenaean Age. In the Middle Bronze Age an invasion or migration from the north and possibly the east brought into mainland Greece the first Greek-speaking people. The civilization that they established reached its peak in the Late Bronze Age and has been called Mycenaean, after one of its principal centers of power, Mycenae. Mycenaean civilization, although influenced by the earlier Minoan, differs from it in some striking ways. Mycenae, excavated by Heinrich Schliemann, seems to have lived up to its most famous Homeric epithet “rich in gold.” Surrounded by monumental walls (called Cyclopean because they were said to have been built by the Cyclopes) and entered through the Lion Gate (with its relief above the entrance of two lions or lionesses flanking a single column), Mycenae was built, as were Cretan communities, around a complex palatial structure. Just inside the gate, Schliemann discovered a circle of shaft graves, which contained a considerable treasure. Also excavated were tholos tombs, beehive structures below the palace complex and typical of Mycenaean centers in general.
+            Schliemann’s finds established the generally accurate picture of the Homeric account of the sophistication and wealth of these Mycenaean Greek communities. Homer composed epic songs celebrating a heroic age, and it must be about these communities that he, and other poets, would continue to sing hundreds of years after their collapse.
+            Of great significant is the work of Carl Blegen (1887–1971), who discovered the Mycenaean palace of the legendary King Nestor at Pylos. Particularly impressive is its well-preserved megaron, or central room, with an open hearth, a feature found in Mycenaean but not in Minoan palaces.
+            In the sphere of religion, the Mycenaeans with their worship of a supreme sky-god Zeus differed fundamentally from the Minoans, who worshiped a fertility mother goddess. In many respects, Greek mythology can be seen as the synthesis of the tension between Minoan and Mycenaean culture.
+            
+            Linear B. In the excavation of Mycenaean civilization, clay tablets inscribed with writing have been found; an especially rich hoard was discovered at Pylos, preserved by the fire that brought destruction towards the end of the Bronze Age. These tablets, deciphered in 1952 by Michael Ventris, in collaboration with John Chadwick, have been found to be the earliest form of the Greek language that we possess. The script is called Linear B, to distinguish it from the earlier Minoan script (as yet undeciphered) found on Crete. On Linear B tablets, mention is made of deities familiar to us from later Greek mythology: Zeus, Hera, Poseidon, Hermes, Athena, Eileithyia, and Dionysus. Also recorded is the word paean, which would be a later epithet for Apollo, and the name Enualios, to be identified with Ares. The appearance of the word potnia (mistress or lady) suggests that the Mycenaeans worshiped a goddess of the mother-fertility type, in addition to their sky-god Zeus.
+            
+            Troy and the Trojan War. Schliemann and Wilhelm Dörpfeld conducted pioneering archaeological campaigns from 1871 to 1894 at Troy. The site was reexamined by Blegen from 1932 to 1938. In 1988 Manfred Korfmann began new excavations of the site, which are in progress today.
+            Nine successive settlements have been identified on the hill of Hisarlik, the site of Troy. Troy I dates from the Early Bronze (ca. 2920–2450 B. C.). Troy VIII or Ilion was an important city between ca. 700 B.C. and 85 B. C. Under Augustus, the Romans, who traced their ancestry back to the Trojan Aeneas, began a large-scale restoration of the city (Troy IX, Ilium 85–ca. A. D. 500). A viable city survived there until the late 12th or early 13th centuries.
+            At the level of Troy II (ca. 2600–2450) Schliemann unearthed a horde of treasure, which he inaccurately identified as belonging to Priam and the city of the Trojan War. This “Gold of Troy” was lost during World War II but rediscovered in the 1990s residing in the Pushkin Museum in Moscow.
+            Subsequent excavations have identified Troy VI or Troy VIIa or both as the Troy of the Homeric epics.
+            Dörpfeld claimed that Troy VI (Troia or Ilios, ca. 1700–1250), with its monumental walls, was the city of Priam. The current excavators under Korfmann, however, tend to believe, along with Blegen’s earlier assessments, that an earthquake destroyed Troy VI. For Blegen Troy VII (Troy VIIa to be exact) showed signs of siege and fire and was to be identified as the city of epic song. There was a continuity of culture between Troy VI and Troy VIIa and the remains, taken together, show evidence of human destruction and may represent Priam’s Troy at different stages of the conflict.
+             Archaeology places the eclipse of Troy VI and VIIa at 1250–1150 B. C., which would coincide nicely with the traditional date of 1184 B. C. for the fall of Troy. The citadel at Troy VI reveals a place of prestige and power with significant fortification walls. The whole settlement, both citadel and lower area of habitation, was ca. 200,000 meters square, with a population of ca. 7000. The presence of hasty burials and piles of long-range weapons indicates the last struggles of Troy, the losing side in the war against the Mycenaean Greeks. Evidence suggests commercial ties between the two powers. Troy's strategic position guarding access through the Hellespont and her imposition of tolls suggest economic causes for the conflict.
+            Hittite texts reveal close ties between the Hittites and a city called “Wilusa,” which has plausibly identified with Ilios or Troy. Another text names the god Appaliunas, almost certainly to be identified with Apollo, one of the principal divine defenders of Troy in the Iliad.
+            Excavations have also tended to confirm Homeric geography. Most tantalizing of all has been the discovery of a Mycenaean cemetery, contemporaneous with late Troy VI or VIIa, on the original seashore at the time of the Trojan War. It surely is more than a romantic notion to identify here the camp of the Greek invaders.
+            
+            End of the Mycenaean Age. Towards the end of the Late Bronze Age, the eastern Mediterranean experienced widespread upheaval. Within a generation, nearly all the centers of Mycenaean civilization suffered devastation. There are signs of siege and internal dissension. The tradition that the destruction of Mycenaean power coincided with an invasion of the Dorians from the north, though widely held, has come under fire. Some have attempted to attribute the end of Bronze Age Greece to the invading “sea peoples” mentioned in Egyptian records. Certainty has proven elusive.
+            
+            Homer. Greece now entered an Age of Iron; there is a decline in population, a loss of literacy, and a much-impoverished material culture. By the eighth century B. C., Greece began to re-emerge from its Dark Age, with the composition of the Iliad and the Odyssey. Through an uninterrupted oral tradition from the Bronze Age to the eighth century B. C., bards transmitted their poetic songs glorifying the earlier epoch. “Homer,” whoever he was, or at least the material of the two epic poems, belongs to Asia Minor or one of the coastal islands.
+            The Homeric question or questions, details about the composition and development of the Homeric epics, cannot be finally answered. Both poems convey a Greek point of view and are recorded in an epic language, an amalgamation of Greek dialects created by the bardic tradition. Though the poems glorify the Bronze Age heroes, they also portray the world of the later period, down to the eighth century B. C. At some point the Homeric poems were committed to writing, but when this occurred or to what degree writing itself played a part in their composition is a much-disputed question. The end of the Dark Age sees the development of a system of writing much more flexible than Linear B. By borrowing from the symbols of the Phoenician script, but distinguishing in a new way both vowels and consonants, the Greeks invent the first true alphabet. 
+            
+</div> 
+<!-- hashInput="fff" -->
+<div id="fff"
+appObserveHashItem #intersection="intersection"
+(currentHash)="emitHash($event)" >
+<!-- [ngClass]="{hashItem: intersection.IS_INTERSECTING}"> -->
+<!-- appHashSpy 
+(inFocusViewEventEmitter)="syncWindowToCdk($event)"> -->
+ <!-- (inFocusViewEventEmitter)="syncWindowToCdk($event,'fff')"> -->
+ffffffffffFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+ffffffffffFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+    ACKGROUNDPulmonary arterial hypertension is characterized by pulmonary vascular remodel-ing,  cellular  proliferation,  and  poor  
+    long-term  outcomes.  Dysfunctional  bone  morphogenetic protein pathway signaling is associated with both hereditary and idiopathic subtypes. 
+    Sotatercept, a novel fusion protein, binds activins and growth differentiation factors in the attempt to restore balance between growth-promoting 
+    and growth-inhibiting signaling pathways.METHODSIn this 24-week multicenter trial, we randomly assigned 106 adults who were re-ceiving background 
+    therapy for pulmonary arterial hypertension to receive subcu-taneous sotatercept at a dose of 0.3 mg per kilogram of body weight every 3 weeks or 0.7 mg per 
+    kilogram every 3 weeks or placebo. The primary end point was the change from baseline to week 24 in pulmonary vascular resistance.RESULTSBaseline characteristics
+     were similar among the three groups. The least-squares mean difference between the sotatercept 0.3-mg group and the placebo group in the change from baseline to week 
+     24 in pulmonary vascular resistance was −145.8 dyn ·  sec ·  cm−5(95%  confidence  interval  [CI],  −241.0  to  −50.6;  P  =   0.003).  The  least-squares  mean  difference
+      between the sotatercept 0.7-mg group and the placebo group was −239.5 dyn · sec · cm−5  (95%  CI,  −329.3  to  −149.7;  
+      At  24  weeks,  the  least-squares  mean difference between the sotatercept 0.3-mg group and the placebo group in the change from baseline
+       in 6-minute walk distance was 29.4 m (95% CI, 3.8 to 55.0). The  least-squares  mean  difference  between  the  sotatercept  0.7-mg  group  and  the  
+       placebo group was 21.4 m (95% CI, −2.8 to 45.7).
+     Sotatercept was also associated with a  decrease  in  N-terminal  pro–B-type  natriuretic  peptide 
+      levels.  Thrombocytopenia  and  an  increased  hemoglobin  level  were  the  most  common  
+      hematologic  adverse  events. One patient in the sotatercept 0.7-mg group died from cardiac
+       arrest.
+      CONCLUSIONSTreatment with sotatercept resulted in a reduction in pulmonary vascular 
+      resistance in 
+       patients  receiving  background  therapy  for  pulmonary  arterial  hypertension. 
+        (Funded by Acceleron Pharma; PULSAR ClinicalTrials.gov number, NCT03496207.)ABSTR ACTSotatercept 
+        for the Treatment of Pulmonary Arterial HypertensionMarc Humbert, M.D., Ph.D., Vallerie McLaughlin, M.D., J. Simon R. Gibbs,
+         M.D., Mardi Gomberg‑Maitland, M.D., Marius M. Hoeper, M.D., Ioana R. Preston, M.D., Rogerio Souza, M.D., Ph.D., Aaron Waxman, M.D.,
+          Ph.D., Pilar Escribano Subias, M.D., Ph.D., Jeremy Feldman, M.D., Gisela Meyer, M.D., David Montani, M.D., Ph.D., Karen M. Olsson,
+           M.D., Solaiappan Manimaran, Ph.D., Jennifer Barnes, Ph.D., Peter G. Linde, M.D., Janethe de Oliveira Pena, M.D., Ph.D., and David B. Badesch,
+            M.D., for the PULSAR Trial Investigators*  Original ArticleThe New England Journal of Medicine Downloaded from nejm.org at UNIV MISSOURI on April 6, 2021. 
+            For personal use only. No other uses without permission.  Copyright © 2021 Massachusetts Medical Society. All rights reserved. 
+n engl j med 384;13 nejm.orgApril 1, 20211205Sotatercept for Pulmonary Arterial HypertensionPulmonary  arterial  hypertension  is  a rare, progressive disorder characterized by 
+pulmonary vascular remodeling, resulting in high pulmonary artery pressure and progres-sive right ventricular dysfunction.1-3 Current treat-ments, which target the prostacyclin, 
+endothelin-1, or  nitric  oxide  pathways,  slow  disease  progres-sion.  However,  the  5-year  survival  rate  of  ap-proximately 60% highlights the need for ther-apies 
+targeting alternative pulmonary vascular remodeling pathways.1,4-7Mutations  in  bone  morphogenetic  protein  (BMP) receptor type 2 (BMPR2) — a member of the transforming
+ growth factor β (TGF-β) super-family — are a major factor underlying heritable pulmonary  arterial  hypertension;  the  BMPR-II  signaling pathway is also important in
+  develop-ment of the disease in patients without heritable disease.8-11  Owing  to  the  role  of  the  BMPR-II  pathway in maintaining endothelial integrity in pulmonary 
+  arteries, mutations that reduce signal-ing  in  this  pathway  promote  endothelial  dys-function,  increased  cellular  proliferation,  and  pulmonary vascular remodeling.
+  9,10,12-16Sotatercept  is  a  novel,  first-in-class  fusion  protein composed of the extracellular domain of the human activin receptor type IIA fused to the Fc domain of human 
+  IgG1. Sotatercept acts as a ligand trap for members of the TGF-β super-family,  thus  restoring  balance  between  the  growth-promoting activin growth differentiation factor 
+   pathway  and  the  growth-inhibiting  BMP  pathway (Fig. 1).17 Sotatercept has been evaluated in  healthy  volunteers,  in  patients  with  hemato-logic disorders, and in 
+   patients with conditions characterized  by  a  dysfunctional  TGF-β  super-family  signaling  pathway,  including  bone  loss,  chemotherapy-induced anemia, multiple myeloma, 
+   myelodysplastic syndromes, β-thalassemia, and end-stage  kidney  disease.18-24  In  the  PULSAR  trial,  we  investigated  the  safety  and  efficacy  of  sotatercept  in  
+   patients  with  pulmonary  arterial  hypertension  who  were  receiving  background  therapy for pulmonary hypertension.MethodsTrial Design and OversightPULSAR is a multicenter,
+    randomized, double-blind,  phase  2  trial  that  includes  a  24-week  placebo-controlled  treatment  period,  followed  by  an  18-month  active-drug  extension  period  that  
+    is  currently  ongoing.  Here,  we  report  the  main results from the 24-week placebo-controlled period.A  steering  committee  designed  the  trial  in  collaboration with 
+    the sponsor, Acceleron Pharma. An  institutional  review  board  or  independent  ethics committee at each trial center approved the  protocol.  An  independent  data  and  
+    safety  monitoring committee reviewed unblinded safety data  collected  6  weeks  after  the  first  dose  of  sotatercept or placebo was administered. The trial was conducted 
+    in accordance with the principles of the Declaration of Helsinki, the international ethical  guidelines  of  the  Council  for  Interna-tional  Organizations  of  Medical  Sciences, 
+     the  Good Clinical Practice guidelines of the Interna-tional  Council  for  Harmonisation,  and  applica-ble laws and regulations.25-27In  addition  to  its  role  in  the  design  
+     of  the  trial, the sponsor selected the participating trial centers; oversaw the conduct and monitoring of the trial, which were performed by a contract re-search organization (PPD);
+      received and main-tained the trial database; and performed all the data  analyses.  No  independent  analyses  of  the  data were performed. The academic authors had the authority 
+      to request additional analyses. All the authors vouch for the completeness and accuracy of the data and analyses and for the fidelity of the  trial  to  the  protocol  and  the  
+      statistical  analysis  plan,  which  are  available  with  the  full  text of this article at NEJM.org.PatientsEligible patients had confirmed pulmonary arte-rial hypertension
+       (group 1 of the updated World Health  Organization  [WHO]  classification  of  pulmonary  hypertension)  in  WHO  functional  class II or III (classes range from I to IV, with
+        higher  numbers  indicating  greater  functional  limitations), excluding the subtypes associated with portopulmonary disease, schistosomiasis, and human immunodeficiency virus 
+        infection.2A full list of inclusion and exclusion criteria is provided in the Supplementary Appendix, avail-able at NEJM.org. Patients were receiving stable background therapy 
+        or pulmonary arterial hyper-tension for at least 90 days before enrollment in the trial and continued to receive the treatment during  the  course  of  the  trial.  The  treatment 
+         consisted  of  monotherapy,  double  therapy,  or  triple therapy with combinations of endothelin-The New England Journal of Medicine Downloaded from nejm.org at UNIV MISSOURI on
+          April 6, 2021. For personal use only. No other uses without permission.  Copyright © 2021 Massachusetts Medical Society. All rights reserved. 
+n engl j med 384;13    nejm.org    April 1, 20211206The new england journal of medicinereceptor antagonists, phosphodiesterase-5 inhibi-tors, soluble guanylate cyclase stimulators, prosta-cyclin
+ analogues, or prostacyclin-receptor agonists. All the patients provided written informed consent.ProceduresInitially, eligible patients were stratified accord-ing to baseline WHO functional 
+ class and were randomly assigned in a 1:1:1 ratio by an interac-tive response technology system to one of three groups: placebo, sotatercept at a dose of 0.3 mg per kilogram of body weight,
+  or sotatercept at a dose of 0.7 mg per kilogram. During the trial, the randomization ratio was changed to 3:3:4 to increase the statistical power with respect to the sotatercept  0.7-mg 
+   group;  7  patients  had  been  enrolled at the time of this change. Sotatercept or placebo (saline) was administered by means of subcutaneous injection every 21 days.Safety and efficacy 
+   were assessed at screening and every 3 weeks thereafter for 24 weeks. Ad-verse  events  were  recorded  from  the  time  of  screening  until  8  weeks  after  the  end  of  the 
+    placebo-controlled  treatment  period.  Patients  Figure 1. Proposed Mechanism of Action for Sotatercept in Pulmonary Arterial Hypertension.The proposed mechanism of action involves 
+    rebalancing growth‑promoting and growth‑inhibiting signaling. Pulmo‑nary arterial hypertension is associated with dysregulation of the bone morphogenetic protein (BMP) receptor
+    ACKGROUNDPulmonary arterial hypertension is characterized by pulmonary vascular remodel-ing,  cellular  proliferation,  and  poor  long-term  outcomes. 
+    Dysfunctional  bone  morphogenetic protein pathway signaling is associated with both hereditary and idiopathic subtypes. Sotatercept, a novel fusion protein,
+     binds activins and growth differentiation factors in the attempt to restore balance between growth-promoting and growth-inhibiting signaling pathways.
+     METHODSIn this 24-week multicenter trial, we randomly assigned 106 adults who were re-ceiving background therapy for pulmonary arterial hypertension to 
+     receive subcu-taneous sotatercept at a
+    dose of 0.3 mg per kilogram of body weight every 3 weeks or 0.7 mg per kilogram every 3 weeks or placebo. 
+    The primary end point was the change from baseline to week 24 in pulmonary vascular resistance.RESULTSBaseline characteristics were
+     similar among the three groups. The least-squares mean difference between the sotatercept 0.3-mg group and the placebo group in the change from baseline 
+     to week 24 in pulmonary vascular resistance was −145.8 dyn ·  sec ·  cm−5(95%  confidence  interval  [CI],  −241.0  to  −50.6; 
+      least-squares  mean  difference between the sotatercept 0.7-mg group and the placebo group was −239.5 dyn · sec · cm−5  (95%  CI,  −329.3  to  −149.7;
+       P At  24  weeks,  the  least-squares  mean difference between the sotatercept 0.3-mg group and the placebo group in the change from baseline in
+        6-minute walk distance was 29.4 m (95% CI, 3.8 to 55.0). The  least-squares  mean  difference  between  the  sotatercept  0.7-mg  group  and  the 
+         placebo group was 21.4 m (95% CI, −2.8 to 45.7).
+    Sotatercept was also associated with a  decrease  in  N-terminal  pro–B-type  natriuretic  peptide 
+     levels.  Thrombocytopenia  and  an  increased  hemoglobin  level  were  the  most  common  
+     hematologic  adverse  events. One patient in the sotatercept 0.7-mg group died from cardiac
+      arrest.
+     CONCLUSIONSTreatment with sotatercept resulted in a reduction in pulmonary vascular 
+     resistance in 
+      patients  receiving  background  therapy  for  pulmonary  arterial  hypertension. 
+       (Funded by Acceleron Pharma; PULSAR ClinicalTrials.gov number, NCT03496207.)ABSTR ACTSotatercept 
+       for the Treatment of Pulmonary Arterial HypertensionMarc Humbert, M.D., Ph.D., Vallerie McLaughlin, M.D., J. Simon R. Gibbs,
+        M.D., Mardi Gomberg‑Maitland, M.D., Marius M. Hoeper, M.D., Ioana R. Preston, M.D., Rogerio Souza, M.D., Ph.D., Aaron Waxman, M.D.,
+         Ph.D., Pilar Escribano Subias, M.D., Ph.D., Jeremy Feldman, M.D., Gisela Meyer, M.D., David Montani, M.D., Ph.D., Karen M. Olsson,
+          M.D., Solaiappan Manimaran, Ph.D., Jennifer Barnes, Ph.D., Peter G. Linde, M.D., Janethe de Oliveira Pena, M.D., Ph.D., and David B. Badesch,
+           M.D., for the PULSAR Trial Investigators*  Original ArticleThe New England Journal of Medicine Downloaded from nejm.org at UNIV MISSOURI on April 6, 2021. 
+           For personal use only. No other uses without permission.  Copyright © 2021 Massachusetts Medical Society. All rights reserved. 
+n engl j med 384;13 nejm.orgApril 1, 20211205Sotatercept for Pulmonary Arterial HypertensionPulmonary  arterial  hypertension  is  a rare, progressive disorder characterized by 
+pulmonary vascular remodeling, resulting in high pulmonary artery pressure and progres-sive right ventricular dysfunction.1-3 Current treat-ments, which target the prostacyclin, 
+endothelin-1, or  nitric  oxide  pathways,  slow  disease  progres-sion.  However,  the  5-year  survival  rate  of  ap-proximately 60% highlights the need for ther-apies 
+targeting alternative pulmonary vascular remodeling pathways.1,4-7Mutations  in  bone  morphogenetic  protein  (BMP) receptor type 2 (BMPR2) — a member of the transforming
+growth factor β (TGF-β) super-family — are a major factor underlying heritable pulmonary  arterial  hypertension;  the  BMPR-II  signaling pathway is also important in
+ develop-ment of the disease in patients without heritable disease.8-11  Owing  to  the  role  of  the  BMPR-II  pathway in maintaining endothelial integrity in pulmonary 
+ arteries, mutations that reduce signal-ing  in  this  pathway  promote  endothelial  dys-function,  increased  cellular  proliferation,  and  pulmonary vascular remodeling.
+ 9,10,12-16Sotatercept  is  a  novel,  first-in-class  fusion  protein composed of the extracellular domain of the human activin receptor type IIA fused to the Fc domain of human 
+ IgG1. Sotatercept acts as a ligand trap for members of the TGF-β super-family,  thus  restoring  balance  between  the  growth-promoting activin growth differentiation factor 
+  pathway  and  the  growth-inhibiting  BMP  pathway (Fig. 1).17 Sotatercept has been evaluated in  healthy  volunteers,  in  patients  with  hemato-logic disorders, and in 
+  patients with conditions characterized  by  a  dysfunctional  TGF-β  super-family  signaling  pathway,  including  bone  loss,  chemotherapy-induced anemia, multiple myeloma, 
+  myelodysplastic syndromes, β-thalassemia, and end-stage  kidney  disease.18-24  In  the  PULSAR  trial,  we  investigated  the  safety  and  efficacy  of  sotatercept  in  
+  patients  with  pulmonary  arterial  hypertension  who  were  receiving  background  therapy for pulmonary hypertension.MethodsTrial Design and OversightPULSAR is a multicenter,
+   randomized, double-blind,  phase  2  trial  that  includes  a  24-week  placebo-controlled  treatment  period,  followed  by  an  18-month  active-drug  extension  period  that  
+   is  currently  ongoing.  Here,  we  report  the  main results from the 24-week placebo-controlled period.A  steering  committee  designed  the  trial  in  collaboration with 
+   the sponsor, Acceleron Pharma. An  institutional  review  board  or  independent  ethics committee at each trial center approved the  protocol.  An  independent  data  and  
+   safety  monitoring committee reviewed unblinded safety data  collected  6  weeks  after  the  first  dose  of  sotatercept or placebo was administered. The trial was conducted 
+   in accordance with the principles of the Declaration of Helsinki, the international ethical  guidelines  of  the  Council  for  Interna-tional  Organizations  of  Medical  Sciences, 
+    the  Good Clinical Practice guidelines of the Interna-tional  Council  for  Harmonisation,  and  applica-ble laws and regulations.25-27In  addition  to  its  role  in  the  design  
+    of  the  trial, the sponsor selected the participating trial centers; oversaw the conduct and monitoring of the trial, which were performed by a contract re-search organization (PPD);
+     received and main-tained the trial database; and performed all the data  analyses.  No  independent  analyses  of  the  data were performed. The academic authors had the authority 
+     to request additional analyses. All the authors vouch for the completeness and accuracy of the data and analyses and for the fidelity of the  trial  to  the  protocol  and  the  
+     statistical  analysis  plan,  which  are  available  with  the  full  text of this article at NEJM.org.PatientsEligible patients had confirmed pulmonary arte-rial hypertension
+      (group 1 of the updated World Health  Organization  [WHO]  classification  of  pulmonary  hypertension)  in  WHO  functional  class II or III (classes range from I to IV, with
+       higher  numbers  indicating  greater  functional  limitations), excluding the subtypes associated with portopulmonary disease, schistosomiasis, and human immunodeficiency virus 
+       infection.2A full list of inclusion and exclusion criteria is provided in the Supplementary Appendix, avail-able at NEJM.org. Patients were receiving stable background therapy 
+       or pulmonary arterial hyper-tension for at least 90 days before enrollment in the trial and continued to receive the treatment during  the  course  of  the  trial.  The  treatment 
+        consisted  of  monotherapy,  double  therapy,  or  triple therapy with combinations of endothelin-The New England Journal of Medicine Downloaded from nejm.org at UNIV MISSOURI on
+         April 6, 2021. For personal use only. No other uses without permission.  Copyright © 2021 Massachusetts Medical Society. All rights reserved. 
+n engl j med 384;13    nejm.org    April 1, 20211206The new england journal of medicinereceptor antagonists, phosphodiesterase-5 inhibi-tors, soluble guanylate cyclase stimulators, prosta-cyclin
+analogues, or prostacyclin-receptor agonists. All the patients provided written informed consent.ProceduresInitially, eligible patients were stratified accord-ing to baseline WHO functional 
+class and were randomly assigned in a 1:1:1 ratio by an interac-tive response technology system to one of three groups: placebo, sotatercept at a dose of 0.3 mg per kilogram of body weight,
+ or sotatercept at a dose of 0.7 mg per kilogram. During the trial, the randomization ratio was changed to 3:3:4 to increase the statistical power with respect to the sotatercept  0.7-mg 
+  group;  7  patients  had  been  enrolled at the time of this change. Sotatercept or placebo (saline) was administered by means of subcutaneous injection every 21 days.Safety and efficacy 
+  were assessed at screening and every 3 weeks thereafter for 24 weeks. Ad-verse  events  were  recorded  from  the  time  of  screening  until  8  weeks  after  the  end  of  the 
+   placebo-controlled  treatment  period.  Patients  Figure 1. Proposed Mechanism of Action for Sotatercept in Pulmonary Arterial Hypertension.The proposed mechanism of action involves 
+   rebalancing growth‑promoting and growth‑inhibiting signaling. Pulmo‑nary arterial hypertension is associated with dysregulation of the bone morphogenetic protein (BMP) receptor
+    type II (BMPR‑II)–Smad1 5 8 pathway in pulmonary vascular smooth muscle and endothelial cells, causing an imbalance between proproliferative and antiproliferative signaling
+     pathways. BMPR‑II–Smad1 5 8 pathway down‑regulation leads to increased production of activin ligands, such as activin A, growth differentiation factor 8 (GDF8), and GDF11, 
+     which contributes to activin receptor type IIA (ActRIIA)–Smad2 3 pathway up‑regulation. Increased phosphorylated Smad (pSmad)2 3 activity promotes expression of the endogenous
+      BMP antagonists gremlin‑1 and noggin.Gremlin‑1 and noggin further reduce BMP–Smad1 signaling. The overall result is that antiproliferative signaling is reduced, 
+      shifting the balance toward proproliferative activin–Smad2  signaling, which leads to pulmonary vascular remodel‑ing. Sotatercept acts to sequester excess ActRIIA 
+      ligands, thereby reducing ActRIIA–Smad2  signaling to rebalance growth‑promoting and growth‑inhibiting signaling. ALK denotes activin receptor–like kinase.ALK1
+ActRIIA BBMPR-IIEXTRACELLULARPulmonary arterial hypertensionBMPsActivins and GDFsSmad4pSmad1 ProproliferativeGremlin-1 and
+       nogginAntiproliferativeALK1 2 3 6ALK4 5 and GDFsSotaterceptGremlin-1 and nogginBMPR-IISmad4pSmad1
+       England Journal of Medicine Downloaded from nejm.org at UNIV MISSOURI on April 6, 2021.
+        For personal use only. No other uses without permission.  Copyright © 2021 Massachusetts Medical Society. All rights reserved. 
+n engl j med 384;13 nejm.orgApril 1, 20211207Sotatercept for Pulmonary Arterial Hypertensionwho completed the placebo-controlled treatment period continued directly into
+the 18-month ex-tension  period;  the  recording  of  adverse  events  continues in the extension period. Dose modifi-cations  were  planned  in  accordance  with  
+guid-ance  from  the  European  Medicines  Agency  (as  outlined  in  Table  S1  in  the  Supplementary  Ap-pendix) for any occurrences of leukopenia, neu-tropenia, 
+ or  thrombocytopenia  or  increases  in  hemoglobin levels or blood pressure. These ad-verse events have been reported in previous trials of sotatercept. Patients
+  who discontinued sotater-cept or placebo or withdrew consent were asked to return for the end-of-trial visit.End PointsThe  primary  end  point  was  the  change  
+  from  baseline to week 24 in pulmonary vascular resis-tance.  The  key  secondary  end  point  was  the  change  from  baseline  to  week  24  in  6-minute  walk  
+  distance.  Other  secondary  efficacy  end  points  included  the  change  from  baseline  to  week  24  in  N-terminal  pro–B-type  natriuretic  peptide (NT-proBNP) 
+  level, systolic excursion of the  tricuspid  annular  plane  (assessed  by  echo-cardiography),  WHO  functional  class,  clinical  worsening, scores on the Cambridge 
+  Pulmonary Hypertension  Outcome  Review,  and  scores  on  the  36-Item  Short-Form  Health  Survey  (SF-36).  Safety  end  points  included  adverse  events  and  
+  clinical laboratory test results. A complete list of the trial end points is provided in Table S2.Pulmonary vascular resistance was calculated with the use of the 
+  mean pulmonary artery pres-sure, the pulmonary artery wedge pressure, and the cardiac output, all of which were measured by catheterization of the right side of the 
+  heart at screening and at week 24 of the placebo-controlled treatment period. Echocardiograms (two-dimen-sional) were obtained according to a prespeci-fied protocol 
+  and were approved, reviewed, and analyzed in a blinded manner at a central labo-ratory  (BioTel  Research).  End  points  were  as-sessed  at  baseline  and  at  
+   selected  trial  visits.  Adverse  events  were  graded  according  to  the  National Cancer Institute Common Terminology Criteria for Adverse Events (CTCAE), 
+   version 4.0. The methods used for catheterization and echo-cardiography, as well as descriptions of the end point of clinical worsening and the grades used in  the   
+   CTCAE,  are  provided  in  the  Supplemen-tary Appendix.Statistical AnalysisThe  sample-size  calculation  for  the  trial  was  based on the following assumptions: 
+   a baseline mean  (±SD)  pulmonary  vascular  resistance  of  800±400  dyn · sec · cm−5; a 30% reduction in mean pulmonary  vascular  resistance  (240  dyn · sec · cm−5)
+    at  24  weeks  in  the  sotatercept  groups  and  no  change in the placebo group; a one-sided alpha level of 0.10 and 80% power to detect the differ-ence among groups;
+     and dropout rates of 15% in the placebo group, 15% in the sotatercept 0.3-mg group, and 35% in the sotatercept 0.7-mg group. The  estimated  dropout  rate  in  the 
+      sotatercept  0.7-mg  group  was  higher  owing  to  potential  hemoglobin increases, as determined by pharma-cokinetic  modeling.  On  the  basis  of  these   
+      as-sumptions,  we  estimated  a  sample  size  of  ap-proximately 100 patients to be randomly assigned in the ratio of 3:3:4 across the three groups.All the 
+      efficacy and safety analyses were per-formed  in  the  intention-to-treat  population,  which included all the patients who underwent randomization. The primary
+       end point was ana-lyzed  with  the  use  of  an  analysis  of  covariance  (ANCOVA) model, with the randomization factor and baseline value as covariates.
+        The analysis was performed  with  a  closed  testing  procedure  for  correction of multiplicity and a hierarchical test-ing procedure. 
+        First, the sotatercept 0.7-mg group was compared with the placebo group, followed by a comparison of the sotatercept 0.3-mg group with the
+         placebo group. Multiple imputation was used to handle missing data for all the primary and secondary efficacy end points that were as-sessed 
+         as continuous variables. Other end points were  summarized  with  the  use  of  descriptive  statistics and analyzed with an ANCOVA model, as appropriate. 
+         Conventional two-sided P values are presented for the primary end point; no P values are presented for secondary and other end points. 
+         Sensitivity analyses of the primary and key sec-ondary end points were performed; in one analy-sis, only the patients who were receiving 
+         double or  triple  therapy  for  pulmonary  arterial  hyper-tension at baseline were included, and in an ad-ditional analysis, missing data 
+         were imputed with the  use  of  the  last-observation-carried-forward  method. The underlying normality assumption for ANCOVA was tested with
+          the use of the Shapiro–Wilk  test.  If  the  assumption  of  normality  was  rejected, the Hodges–Lehmann analysis was used to present the location
+           shift value. Results are The New England Journal of Medicine Downloaded from nejm.org at UNIV MISSOURI on April 6, 2021. For personal use only. 
+           o other uses without permission.  Copyright © 2021 Massachusetts Medical Society. All rights reserved. 
+       
+</div> 
+<!-- hashInput="ggg" -->
+<div id="ggg"
+appObserveHashItem #intersection="intersection"
+(currentHash)="emitHash($event)" >
+ <!-- [ngClass]="{hashItem: intersection.IS_INTERSECTING}"> -->
+<!-- appHashSpy 
+(inFocusViewEventEmitter)="syncWindowToCdk($event)"> -->
+ <!-- (inFocusViewEventEmitter)="syncWindowToCdk($event,'ggg')"> -->
+  GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
+    Medical Society. All rights reserved. 
+    ACKGROUNDPulmonary arterial hypertension is characterized by pulmonary vascular remodel-ing,  cellular  proliferation,  and  poor  long-term  outcomes. 
+     Dysfunctional  bone  morphogenetic protein pathway signaling is associated with both hereditary and idiopathic subtypes. Sotatercept, a novel fusion protein,
+      binds activins and growth differentiation factors in the attempt to restore balance between growth-promoting and growth-inhibiting signaling pathways.
+      METHODSIn this 24-week multicenter trial, we randomly assigned 106 adults who were re-ceiving background therapy for pulmonary arterial hypertension to 
+      receive subcu-taneous sotatercept at a
+     dose of 0.3 mg per kilogram of body weight every 3 weeks or 0.7 mg per kilogram every 3 weeks or placebo. 
+     The primary end point was the change from baseline to week 24 in pulmonary vascular resistance.RESULTSBaseline characteristics were
+      similar among the three groups. The least-squares mean difference between the sotatercept 0.3-mg group and the placebo group in the change from baseline 
+      to week 24 in pulmonary vascular resistance was −145.8 dyn ·  sec ·  cm−5(95%  confidence  interval  [CI],  −241.0  to  −50.6;  P  =   0.003).  
+      The  least-squares  mean  difference between the sotatercept 0.7-mg group and the placebo group was −239.5 dyn · sec · cm−5  (95%  CI,  −329.3  to  −149.7;
+         At  24  weeks,  the  least-squares  mean difference between the sotatercept 0.3-mg group and the placebo group in the change from baseline in
+         6-minute walk distance was 29.4 m (95% CI, 3.8 to 55.0). The  least-squares  mean  difference  between  the  sotatercept  0.7-mg  group  and  the 
+          placebo group was 21.4 m (95% CI, −2.8 to 45.7).
+     Sotatercept was also associated with a  decrease  in  N-terminal  pro–B-type  natriuretic  peptide 
+      levels.  Thrombocytopenia  and  an  increased  hemoglobin  level  were  the  most  common  
+      hematologic  adverse  events. One patient in the sotatercept 0.7-mg group died from cardiac
+       arrest.
+      CONCLUSIONSTreatment with sotatercept resulted in a reduction in pulmonary vascular 
+      resistance in 
+       patients  receiving  background  therapy  for  pulmonary  arterial  hypertension. 
+        (Funded by Acceleron Pharma; PULSAR ClinicalTrials.gov number, NCT03496207.)ABSTR ACTSotatercept 
+        for the Treatment of Pulmonary Arterial HypertensionMarc Humbert, M.D., Ph.D., Vallerie McLaughlin, M.D., J. Simon R. Gibbs,
+         M.D., Mardi Gomberg‑Maitland, M.D., Marius M. Hoeper, M.D., Ioana R. Preston, M.D., Rogerio Souza, M.D., Ph.D., Aaron Waxman, M.D.,
+          Ph.D., Pilar Escribano Subias, M.D., Ph.D., Jeremy Feldman, M.D., Gisela Meyer, M.D., David Montani, M.D., Ph.D., Karen M. Olsson,
+           M.D., Solaiappan Manimaran, Ph.D., Jennifer Barnes, Ph.D., Peter G. Linde, M.D., Janethe de Oliveira Pena, M.D., Ph.D., and David B. Badesch,
+            M.D., for the PULSAR Trial Investigators*  Original ArticleThe New England Journal of Medicine Downloaded from nejm.org at UNIV MISSOURI on April 6, 2021. 
+            For personal use only. No other uses without permission.  Copyright © 2021 Massachusetts Medical Society. All rights reserved. 
+n engl j med 384;13 nejm.orgApril 1, 20211205Sotatercept for Pulmonary Arterial HypertensionPulmonary  arterial  hypertension  is  a rare, progressive disorder characterized by 
+pulmonary vascular remodeling, resulting in high pulmonary artery pressure and progres-sive right ventricular dysfunction.1-3 Current treat-ments, which target the prostacyclin, 
+endothelin-1, or  nitric  oxide  pathways,  slow  disease  progres-sion.  However,  the  5-year  survival  rate  of  ap-proximately 60% highlights the need for ther-apies 
+targeting alternative pulmonary vascular remodeling pathways.1,4-7Mutations  in  bone  morphogenetic  protein  (BMP) receptor type 2 (BMPR2) — a member of the transforming
+ growth factor β (TGF-β) super-family — are a major factor underlying heritable pulmonary  arterial  hypertension;  the  BMPR-II  signaling pathway is also important in
+  develop-ment of the disease in patients without heritable disease.8-11  Owing  to  the  role  of  the  BMPR-II  pathway in maintaining endothelial integrity in pulmonary 
+  arteries, mutations that reduce signal-ing  in  this  pathway  promote  endothelial  dys-function,  increased  cellular  proliferation,  and  pulmonary vascular remodeling.
+  9,10,12-16Sotatercept  is  a  novel,  first-in-class  fusion  protein composed of the extracellular domain of the human activin receptor type IIA fused to the Fc domain of human 
+  IgG1. Sotatercept acts as a ligand trap for members of the TGF-β super-family,  thus  restoring  balance  between  the  growth-promoting activin growth differentiation factor 
+   pathway  and  the  growth-inhibiting  BMP  pathway (Fig. 1).17 Sotatercept has been evaluated in  healthy  volunteers,  in  patients  with  hemato-logic disorders, and in 
+   patients with conditions characterized  by  a  dysfunctional  TGF-β  super-family  signaling  pathway,  including  bone  loss,  chemotherapy-induced anemia, multiple myeloma, 
+   myelodysplastic syndromes, β-thalassemia, and end-stage  kidney  disease.18-24  In  the  PULSAR  trial,  we  investigated  the  safety  and  efficacy  of  sotatercept  in  
+   patients  with  pulmonary  arterial  hypertension  who  were  receiving  background  therapy for pulmonary hypertension.MethodsTrial Design and OversightPULSAR is a multicenter,
+    randomized, double-blind,  phase  2  trial  that  includes  a  24-week  placebo-controlled  treatment  period,  followed  by  an  18-month  active-drug  extension  period  that  
+    is  currently  ongoing.  Here,  we  report  the  main results from the 24-week placebo-controlled period.A  steering  committee  designed  the  trial  in  collaboration with 
+    the sponsor, Acceleron Pharma. An  institutional  review  board  or  independent  ethics committee at each trial center approved the  protocol.  An  independent  data  and  
+    safety  monitoring committee reviewed unblinded safety data  collected  6  weeks  after  the  first  dose  of  sotatercept or placebo was administered. The trial was conducted 
+    in accordance with the principles of the Declaration of Helsinki, the international ethical  guidelines  of  the  Council  for  Interna-tional  Organizations  of  Medical  Sciences, 
+     the  Good Clinical Practice guidelines of the Interna-tional  Council  for  Harmonisation,  and  applica-ble laws and regulations.25-27In  addition  to  its  role  in  the  design  
+     of  the  trial, the sponsor selected the participating trial centers; oversaw the conduct and monitoring of the trial, which were performed by a contract re-search organization (PPD);
+      received and main-tained the trial database; and performed all the data  analyses.  No  independent  analyses  of  the  data were performed. The academic authors had the authority 
+      to request additional analyses. All the authors vouch for the completeness and accuracy of the data and analyses and for the fidelity of the  trial  to  the  protocol  and  the  
+      statistical  analysis  plan,  which  are  available  with  the  full  text of this article at NEJM.org.PatientsEligible patients had confirmed pulmonary arte-rial hypertension
+       (group 1 of the updated World Health  Organization  [WHO]  classification  of  pulmonary  hypertension)  in  WHO  functional  class II or III (classes range from I to IV, with
+        higher  numbers  indicating  greater  functional  limitations), excluding the subtypes associated with portopulmonary disease, schistosomiasis, and human immunodeficiency virus 
+        infection.2A full list of inclusion and exclusion criteria is provided in the Supplementary Appendix, avail-able at NEJM.org. Patients were receiving stable background therapy 
+        or pulmonary arterial hyper-tension for at least 90 days before enrollment in the trial and continued to receive the treatment during  the  course  of  the  trial.  The  treatment 
+         consisted  of  monotherapy,  double  therapy,  or  triple therapy with combinations of endothelin-The New England Journal of Medicine Downloaded from nejm.org at UNIV MISSOURI on
+          April 6, 2021. For personal use only. No other uses without permission.  Copyright © 2021 Massachusetts Medical Society. All rights reserved. 
+n engl j med 384;13    nejm.org    April 1, 20211206The new england journal of medicinereceptor antagonists, phosphodiesterase-5 inhibi-tors, soluble guanylate cyclase stimulators, prosta-cyclin
+ analogues, or prostacyclin-receptor agonists. All the patients provided written informed consent.ProceduresInitially, eligible patients were stratified accord-ing to baseline WHO functional 
+ class and were randomly assigned in a 1:1:1 ratio by an interac-tive response technology system to one of three groups: placebo, sotatercept at a dose of 0.3 mg per kilogram of body weight,
+  or sotatercept at a dose of 0.7 mg per kilogram. During the trial, the randomization ratio was changed to 3:3:4 to increase the statistical power with respect to the sotatercept  0.7-mg 
+   group;  7  patients  had  been  enrolled at the time of this change. Sotatercept or placebo (saline) was administered by means of subcutaneous injection every 21 days.Safety and efficacy 
+   were assessed at screening and every 3 weeks thereafter for 24 weeks. Ad-verse  events  were  recorded  from  the  time  of  screening  until  8  weeks  after  the  end  of  the 
+    placebo-controlled  treatment  period.  Patients  Figure 1. Proposed Mechanism of Action for Sotatercept in Pulmonary Arterial Hypertension.The proposed mechanism of action involves 
+    rebalancing growth‑promoting and growth‑inhibiting signaling. Pulmo‑nary arterial hypertension is associated with dysregulation of the bone morphogenetic protein (BMP) receptor
+     type II (BMPR‑II)–Smad1 5 8 pathway in pulmonary vascular smooth muscle and endothelial cells, causing an imbalance between proproliferative and antiproliferative signaling
+      pathways. BMPR‑II–Smad1 5 8 pathway down‑regulation leads to increased production of activin ligands, such as activin A, growth differentiation factor 8 (GDF8), and GDF11, 
+      which contributes to activin receptor type IIA (ActRIIA)–Smad2 3 pathway up‑regulation. Increased phosphorylated Smad (pSmad)2 3 activity promotes expression of the endogenous
+       BMP antagonists gremlin‑1 and noggin.Gremlin‑1 and noggin further reduce BMP–Smad1 signaling. The overall result is that antiproliferative signaling is reduced, 
+       shifting the balance toward proproliferative activin–Smad2  signaling, which leads to pulmonary vascular remodel‑ing. Sotatercept acts to sequester excess ActRIIA 
+       ligands, thereby reducing ActRIIA–Smad2  signaling to rebalance growth‑promoting and growth‑inhibiting signaling. ALK denotes activin receptor–like kinase.ALK1
+ ActRIIA BBMPR-IIEXTRACELLULARPulmonary arterial hypertensionBMPsActivins and GDFsSmad4pSmad1 ProproliferativeGremlin-1 and
+        nogginAntiproliferativeALK1 2 3 6ALK4 5 and GDFsSotaterceptGremlin-1 and nogginBMPR-IISmad4pSmad1
+        England Journal of Medicine Downloaded from nejm.org at UNIV MISSOURI on April 6, 2021.
+         For personal use only. No other uses without permission.  Copyright © 2021 Massachusetts Medical Society. All rights reserved. 
+n engl j med 384;13 nejm.orgApril 1, 20211207Sotatercept for Pulmonary Arterial Hypertensionwho completed the placebo-controlled treatment period continued directly into
+ the 18-month ex-tension  period;  the  recording  of  adverse  events  continues in the extension period. Dose modifi-cations  were  planned  in  accordance  with  
+ guid-ance  from  the  European  Medicines  Agency  (as  outlined  in  Table  S1  in  the  Supplementary  Ap-pendix) for any occurrences of leukopenia, neu-tropenia, 
+  or  thrombocytopenia  or  increases  in  hemoglobin levels or blood pressure. These ad-verse events have been reported in previous trials of sotatercept. Patients
+   who discontinued sotater-cept or placebo or withdrew consent were asked to return for the end-of-trial visit.End PointsThe  primary  end  point  was  the  change  
+   from  baseline to week 24 in pulmonary vascular resis-tance.  The  key  secondary  end  point  was  the  change  from  baseline  to  week  24  in  6-minute  walk  
+   distance.  Other  secondary  efficacy  end  points  included  the  change  from  baseline  to  week  24  in  N-terminal  pro–B-type  natriuretic  peptide (NT-proBNP) 
+   level, systolic excursion of the  tricuspid  annular  plane  (assessed  by  echo-cardiography),  WHO  functional  class,  clinical  worsening, scores on the Cambridge 
+   Pulmonary Hypertension  Outcome  Review,  and  scores  on  the  36-Item  Short-Form  Health  Survey  (SF-36).  Safety  end  points  included  adverse  events  and  
+   clinical laboratory test results. A complete list of the trial end points is provided in Table S2.Pulmonary vascular resistance was calculated with the use of the 
+   mean pulmonary artery pres-sure, the pulmonary artery wedge pressure, and the cardiac output, all of which were measured by catheterization of the right side of the 
+   heart at screening and at week 24 of the placebo-controlled treatment period. Echocardiograms (two-dimen-sional) were obtained according to a prespeci-fied protocol 
+   and were approved, reviewed, and analyzed in a blinded manner at a central labo-ratory  (BioTel  Research).  End  points  were  as-sessed  at  baseline  and  at  
+    selected  trial  visits.  Adverse  events  were  graded  according  to  the  National Cancer Institute Common Terminology Criteria for Adverse Events (CTCAE), 
+    version 4.0. The methods used for catheterization and echo-cardiography, as well as descriptions of the end point of clinical worsening and the grades used in  the   
+    CTCAE,  are  provided  in  the  Supplemen-tary Appendix.Statistical AnalysisThe  sample-size  calculation  for  the  trial  was  based on the following assumptions: 
+    a baseline mean  (±SD)  pulmonary  vascular  resistance  of  800±400  dyn · sec · cm−5; a 30% reduction in mean pulmonary  vascular  resistance  (240  dyn · sec · cm−5)
+     at  24  weeks  in  the  sotatercept  groups  and  no  change in the placebo group; a one-sided alpha level of 0.10 and 80% power to detect the differ-ence among groups;
+      and dropout rates of 15% in the placebo group, 15% in the sotatercept 0.3-mg group, and 35% in the sotatercept 0.7-mg group. The  estimated  dropout  rate  in  the 
+       sotatercept  0.7-mg  group  was  higher  owing  to  potential  hemoglobin increases, as determined by pharma-cokinetic  modeling.  On  the  basis  of  these   
+       as-sumptions,  we  estimated  a  sample  size  of  ap-proximately 100 patients to be randomly assigned in the ratio of 3:3:4 across the three groups.All the 
+       efficacy and safety analyses were per-formed  in  the  intention-to-treat  population,  which included all the patients who underwent randomization. The primary
+        end point was ana-lyzed  with  the  use  of  an  analysis  of  covariance  (ANCOVA) model, with the randomization factor and baseline value as covariates.
+         The analysis was performed  with  a  closed  testing  procedure  for  correction of multiplicity and a hierarchical test-ing procedure. 
+         First, the sotatercept 0.7-mg group was compared with the placebo group, followed by a comparison of the sotatercept 0.3-mg group with the
+          placebo group. Multiple imputation was used to handle missing data for all the primary and secondary efficacy end points that were as-sessed 
+          as continuous variables. Other end points were  summarized  with  the  use  of  descriptive  statistics and analyzed with an ANCOVA model, as appropriate. 
+          Conventional two-sided P values are presented for the primary end point; no P values are presented for secondary and other end points. 
+          Sensitivity analyses of the primary and key sec-ondary end points were performed; in one analy-sis, only the patients who were receiving 
+          double or  triple  therapy  for  pulmonary  arterial  hyper-tension at baseline were included, and in an ad-ditional analysis, missing data 
+          were imputed with the  use  of  the  last-observation-carried-forward  method. The underlying normality assumption for ANCOVA was tested with
+           the use of the Shapiro–Wilk  test.  If  the  assumption  of  normality  was  rejected, the Hodges–Lehmann analysis was used to present the location
+            shift value. Results are The New England Journal of Medicine Downloaded from nejm.org at UNIV MISSOURI on April 6, 2021. For personal use only. 
+            o other uses without permission.  Copyright © 2021 Massachusetts Medical Society. All rights reserved. 
+
+  GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
+  Medical Society. All rights reserved. 
+  ACKGROUNDPulmonary arterial hypertension is characterized by pulmonary vascular remodel-ing,  cellular  proliferation,  and  poor  long-term  outcomes. 
+   Dysfunctional  bone  morphogenetic protein pathway signaling is associated with both hereditary and idiopathic subtypes. Sotatercept, a novel fusion protein,
+    binds activins and growth differentiation factors in the attempt to restore balance between growth-promoting and growth-inhibiting signaling pathways.
+    METHODSIn this 24-week multicenter trial, we randomly assigned 106 adults who were re-ceiving background therapy for pulmonary arterial hypertension to 
+    receive subcu-taneous sotatercept at a
+   dose of 0.3 mg per kilogram of body weight every 3 weeks or 0.7 mg per kilogram every 3 weeks or placebo. 
+   The primary end point was the change from baseline to week 24 in pulmonary vascular resistance.RESULTSBaseline characteristics were
+    similar among the three groups. The least-squares mean difference between the sotatercept 0.3-mg group and the placebo group in the change from baseline 
+    to week 24 in pulmonary vascular resistance was −145.8 dyn ·  sec ·  cm−5(95%  confidence  interval  [CI],  −241.0  to  −50.6;  P  =   0.003).  
+    The  least-squares  mean  difference between the sotatercept 0.7-mg group and the placebo group was −239.5 dyn · sec · cm−5  (95%  CI,  −329.3  to  −149.7;
+       At  24  weeks,  the  least-squares  mean difference between the sotatercept 0.3-mg group and the placebo group in the change from baseline in
+       6-minute walk distance was 29.4 m (95% CI, 3.8 to 55.0). The  least-squares  mean  difference  between  the  sotatercept  0.7-mg  group  and  the 
+        placebo group was 21.4 m (95% CI, −2.8 to 45.7).
+   Sotatercept was also associated with a  decrease  in  N-terminal  pro–B-type  natriuretic  peptide 
+    levels.  Thrombocytopenia  and  an  increased  hemoglobin  level  were  the  most  common  
+    hematologic  adverse  events. One patient in the sotatercept 0.7-mg group died from cardiac
+     arrest.
+    CONCLUSIONSTreatment with sotatercept resulted in a reduction in pulmonary vascular 
+    resistance in 
+     patients  receiving  background  therapy  for  pulmonary  arterial  hypertension. 
+      (Funded by Acceleron Pharma; PULSAR ClinicalTrials.gov number, NCT03496207.)ABSTR ACTSotatercept 
+      for the Treatment of Pulmonary Arterial HypertensionMarc Humbert, M.D., Ph.D., Vallerie McLaughlin, M.D., J. Simon R. Gibbs,
+       M.D., Mardi Gomberg‑Maitland, M.D., Marius M. Hoeper, M.D., Ioana R. Preston, M.D., Rogerio Souza, M.D., Ph.D., Aaron Waxman, M.D.,
+        Ph.D., Pilar Escribano Subias, M.D., Ph.D., Jeremy Feldman, M.D., Gisela Meyer, M.D., David Montani, M.D., Ph.D., Karen M. Olsson,
+         M.D., Solaiappan Manimaran, Ph.D., Jennifer Barnes, Ph.D., Peter G. Linde, M.D., Janethe de Oliveira Pena, M.D., Ph.D., and David B. Badesch,
+          M.D., for the PULSAR Trial Investigators*  Original ArticleThe New England Journal of Medicine Downloaded from nejm.org at UNIV MISSOURI on April 6, 2021. 
+          For personal use only. No other uses without permission.  Copyright © 2021 Massachusetts Medical Society. All rights reserved. 
+n engl j med 384;13 nejm.orgApril 1, 20211205Sotatercept for Pulmonary Arterial HypertensionPulmonary  arterial  hypertension  is  a rare, progressive disorder characterized by 
+pulmonary vascular remodeling, resulting in high pulmonary artery pressure and progres-sive right ventricular dysfunction.1-3 Current treat-ments, which target the prostacyclin, 
+endothelin-1, or  nitric  oxide  pathways,  slow  disease  progres-sion.  However,  the  5-year  survival  rate  of  ap-proximately 60% highlights the need for ther-apies 
+targeting alternative pulmonary vascular remodeling pathways.1,4-7Mutations  in  bone  morphogenetic  protein  (BMP) receptor type 2 (BMPR2) — a member of the transforming
+growth factor β (TGF-β) super-family — are a major factor underlying heritable pulmonary  arterial  hypertension;  the  BMPR-II  signaling pathway is also important in
+develop-ment of the disease in patients without heritable disease.8-11  Owing  to  the  role  of  the  BMPR-II  pathway in maintaining endothelial integrity in pulmonary 
+arteries, mutations that reduce signal-ing  in  this  pathway  promote  endothelial  dys-function,  increased  cellular  proliferation,  and  pulmonary vascular remodeling.
+9,10,12-16Sotatercept  is  a  novel,  first-in-class  fusion  protein composed of the extracellular domain of the human activin receptor type IIA fused to the Fc domain of human 
+IgG1. Sotatercept acts as a ligand trap for members of the TGF-β super-family,  thus  restoring  balance  between  the  growth-promoting activin growth differentiation factor 
+ pathway  and  the  growth-inhibiting  BMP  pathway (Fig. 1).17 Sotatercept has been evaluated in  healthy  volunteers,  in  patients  with  hemato-logic disorders, and in 
+ patients with conditions characterized  by  a  dysfunctional  TGF-β  super-family  signaling  pathway,  including  bone  loss,  chemotherapy-induced anemia, multiple myeloma, 
+ myelodysplastic syndromes, β-thalassemia, and end-stage  kidney  disease.18-24  In  the  PULSAR  trial,  we  investigated  the  safety  and  efficacy  of  sotatercept  in  
+ patients  with  pulmonary  arterial  hypertension  who  were  receiving  background  therapy for pulmonary hypertension.MethodsTrial Design and OversightPULSAR is a multicenter,
+  randomized, double-blind,  phase  2  trial  that  includes  a  24-week  placebo-controlled  treatment  period,  followed  by  an  18-month  active-drug  extension  period  that  
+  is  currently  ongoing.  Here,  we  report  the  main results from the 24-week placebo-controlled period.A  steering  committee  designed  the  trial  in  collaboration with 
+  the sponsor, Acceleron Pharma. An  institutional  review  board  or  independent  ethics committee at each trial center approved the  protocol.  An  independent  data  and  
+  safety  monitoring committee reviewed unblinded safety data  collected  6  weeks  after  the  first  dose  of  sotatercept or placebo was administered. The trial was conducted 
+  in accordance with the principles of the Declaration of Helsinki, the international ethical  guidelines  of  the  Council  for  Interna-tional  Organizations  of  Medical  Sciences, 
+   the  Good Clinical Practice guidelines of the Interna-tional  Council  for  Harmonisation,  and  applica-ble laws and regulations.25-27In  addition  to  its  role  in  the  design  
+   of  the  trial, the sponsor selected the participating trial centers; oversaw the conduct and monitoring of the trial, which were performed by a contract re-search organization (PPD);
+    received and main-tained the trial database; and performed all the data  analyses.  No  independent  analyses  of  the  data were performed. The academic authors had the authority 
+    to request additional analyses. All the authors vouch for the completeness and accuracy of the data and analyses and for the fidelity of the  trial  to  the  protocol  and  the  
+    statistical  analysis  plan,  which  are  available  with  the  full  text of this article at NEJM.org.PatientsEligible patients had confirmed pulmonary arte-rial hypertension
+     (group 1 of the updated World Health  Organization  [WHO]  classification  of  pulmonary  hypertension)  in  WHO  functional  class II or III (classes range from I to IV, with
+      higher  numbers  indicating  greater  functional  limitations), excluding the subtypes associated with portopulmonary disease, schistosomiasis, and human immunodeficiency virus 
+      infection.2A full list of inclusion and exclusion criteria is provided in the Supplementary Appendix, avail-able at NEJM.org. Patients were receiving stable background therapy 
+      or pulmonary arterial hyper-tension for at least 90 days before enrollment in the trial and continued to receive the treatment during  the  course  of  the  trial.  The  treatment 
+       consisted  of  monotherapy,  double  therapy,  or  triple therapy with combinations of endothelin-The New England Journal of Medicine Downloaded from nejm.org at UNIV MISSOURI on
+        April 6, 2021. For personal use only. No other uses without permission.  Copyright © 2021 Massachusetts Medical Society. All rights reserved. 
+n engl j med 384;13    nejm.org    April 1, 20211206The new england journal of medicinereceptor antagonists, phosphodiesterase-5 inhibi-tors, soluble guanylate cyclase stimulators, prosta-cyclin
+analogues, or prostacyclin-receptor agonists. All the patients provided written informed consent.ProceduresInitially, eligible patients were stratified accord-ing to baseline WHO functional 
+class and were randomly assigned in a 1:1:1 ratio by an interac-tive response technology system to one of three groups: placebo, sotatercept at a dose of 0.3 mg per kilogram of body weight,
+or sotatercept at a dose of 0.7 mg per kilogram. During the trial, the randomization ratio was changed to 3:3:4 to increase the statistical power with respect to the sotatercept  0.7-mg 
+ group;  7  patients  had  been  enrolled at the time of this change. Sotatercept or placebo (saline) was administered by means of subcutaneous injection every 21 days.Safety and efficacy 
+ were assessed at screening and every 3 weeks thereafter for 24 weeks. Ad-verse  events  were  recorded  from  the  time  of  screening  until  8  weeks  after  the  end  of  the 
+  placebo-controlled  treatment  period.  Patients  Figure 1. Proposed Mechanism of Action for Sotatercept in Pulmonary Arterial Hypertension.The proposed mechanism of action involves 
+  rebalancing growth‑promoting and growth‑inhibiting signaling. Pulmo‑nary arterial hypertension is associated with dysregulation of the bone morphogenetic protein (BMP) receptor
+   type II (BMPR‑II)–Smad1 5 8 pathway in pulmonary vascular smooth muscle and endothelial cells, causing an imbalance between proproliferative and antiproliferative signaling
+    pathways. BMPR‑II–Smad1 5 8 pathway down‑regulation leads to increased production of activin ligands, such as activin A, growth differentiation factor 8 (GDF8), and GDF11, 
+    which contributes to activin receptor type IIA (ActRIIA)–Smad2 3 pathway up‑regulation. Increased phosphorylated Smad (pSmad)2 3 activity promotes expression of the endogenous
+     BMP antagonists gremlin‑1 and noggin.Gremlin‑1 and noggin further reduce BMP–Smad1 signaling. The overall result is that antiproliferative signaling is reduced, 
+     shifting the balance toward proproliferative activin–Smad2  signaling, which leads to pulmonary vascular remodel‑ing. Sotatercept acts to sequester excess ActRIIA 
+     ligands, thereby reducing ActRIIA–Smad2  signaling to rebalance growth‑promoting and growth‑inhibiting signaling. ALK denotes activin receptor–like kinase.ALK1
+ActRIIA BBMPR-IIEXTRACELLULARPulmonary arterial hypertensionBMPsActivins and GDFsSmad4pSmad1 ProproliferativeGremlin-1 and
+      nogginAntiproliferativeALK1 2 3 6ALK4 5 and GDFsSotaterceptGremlin-1 and nogginBMPR-IISmad4pSmad1
+      England Journal of Medicine Downloaded from nejm.org at UNIV MISSOURI on April 6, 2021.
+       For personal use only. No other uses without permission.  Copyright © 2021 Massachusetts Medical Society. All rights reserved. 
+n engl j med 384;13 nejm.orgApril 1, 20211207Sotatercept for Pulmonary Arterial Hypertensionwho completed the placebo-controlled treatment period continued directly into
+the 18-month ex-tension  period;  the  recording  of  adverse  events  continues in the extension period. Dose modifi-cations  were  planned  in  accordance  with  
+guid-ance  from  the  European  Medicines  Agency  (as  outlined  in  Table  S1  in  the  Supplementary  Ap-pendix) for any occurrences of leukopenia, neu-tropenia, 
+or  thrombocytopenia  or  increases  in  hemoglobin levels or blood pressure. These ad-verse events have been reported in previous trials of sotatercept. Patients
+ who discontinued sotater-cept or placebo or withdrew consent were asked to return for the end-of-trial visit.End PointsThe  primary  end  point  was  the  change  
+ from  baseline to week 24 in pulmonary vascular resis-tance.  The  key  secondary  end  point  was  the  change  from  baseline  to  week  24  in  6-minute  walk  
+ distance.  Other  secondary  efficacy  end  points  included  the  change  from  baseline  to  week  24  in  N-terminal  pro–B-type  natriuretic  peptide (NT-proBNP) 
+ level, systolic excursion of the  tricuspid  annular  plane  (assessed  by  echo-cardiography),  WHO  functional  class,  clinical  worsening, scores on the Cambridge 
+ Pulmonary Hypertension  Outcome  Review,  and  scores  on  the  36-Item  Short-Form  Health  Survey  (SF-36).  Safety  end  points  included  adverse  events  and  
+ clinical laboratory test results. A complete list of the trial end points is provided in Table S2.Pulmonary vascular resistance was calculated with the use of the 
+ mean pulmonary artery pres-sure, the pulmonary artery wedge pressure, and the cardiac output, all of which were measured by catheterization of the right side of the 
+ heart at screening and at week 24 of the placebo-controlled treatment period. Echocardiograms (two-dimen-sional) were obtained according to a prespeci-fied protocol 
+ and were approved, reviewed, and analyzed in a blinded manner at a central labo-ratory  (BioTel  Research).  End  points  were  as-sessed  at  baseline  and  at  
+  selected  trial  visits.  Adverse  events  were  graded  according  to  the  National Cancer Institute Common Terminology Criteria for Adverse Events (CTCAE), 
+  version 4.0. The methods used for catheterization and echo-cardiography, as well as descriptions of the end point of clinical worsening and the grades used in  the   
+  CTCAE,  are  provided  in  the  Supplemen-tary Appendix.Statistical AnalysisThe  sample-size  calculation  for  the  trial  was  based on the following assumptions: 
+  a baseline mean  (±SD)  pulmonary  vascular  resistance  of  800±400  dyn · sec · cm−5; a 30% reduction in mean pulmonary  vascular  resistance  (240  dyn · sec · cm−5)
+   at  24  weeks  in  the  sotatercept  groups  and  no  change in the placebo group; a one-sided alpha level of 0.10 and 80% power to detect the differ-ence among groups;
+    and dropout rates of 15% in the placebo group, 15% in the sotatercept 0.3-mg group, and 35% in the sotatercept 0.7-mg group. The  estimated  dropout  rate  in  the 
+     sotatercept  0.7-mg  group  was  higher  owing  to  potential  hemoglobin increases, as determined by pharma-cokinetic  modeling.  On  the  basis  of  these   
+     as-sumptions,  we  estimated  a  sample  size  of  ap-proximately 100 patients to be randomly assigned in the ratio of 3:3:4 across the three groups.All the 
+     efficacy and safety analyses were per-formed  in  the  intention-to-treat  population,  which included all the patients who underwent randomization. The primary
+      end point was ana-lyzed  with  the  use  of  an  analysis  of  covariance  (ANCOVA) model, with the randomization factor and baseline value as covariates.
+       The analysis was performed  with  a  closed  testing  procedure  for  correction of multiplicity and a hierarchical test-ing procedure. 
+       First, the sotatercept 0.7-mg group was compared with the placebo group, followed by a comparison of the sotatercept 0.3-mg group with the
+        placebo group. Multiple imputation was used to handle missing data for all the primary and secondary efficacy end points that were as-sessed 
+        as continuous variables. Other end points were  summarized  with  the  use  of  descriptive  statistics and analyzed with an ANCOVA model, as appropriate. 
+        Conventional two-sided P values are presented for the primary end point; no P values are presented for secondary and other end points. 
+        Sensitivity analyses of the primary and key sec-ondary end points were performed; in one analy-sis, only the patients who were receiving 
+        double or  triple  therapy  for  pulmonary  arterial  hyper-tension at baseline were included, and in an ad-ditional analysis, missing data 
+        were imputed with the  use  of  the  last-observation-carried-forward  method. The underlying normality assumption for ANCOVA was tested with
+         the use of the Shapiro–Wilk  test.  If  the  assumption  of  normality  was  rejected, the Hodges–Lehmann analysis was used to present the location
+          shift value. Results are The New England Journal of Medicine Downloaded from nejm.org at UNIV MISSOURI on April 6, 2021. For personal use only. 
+</div> 
+<!-- hashInput="hhh" -->
+<div id="hhh"
+appObserveHashItem #intersection="intersection"
+(currentHash)="emitHash($event)" >
+ <!-- [ngClass]="{hashItem: intersection.IS_INTERSECTING}"> -->
+<!-- appHashSpy  
+(inFocusViewEventEmitter)="syncWindowToCdk($event)"> -->
+ <!-- (inFocusViewEventEmitter)="syncWindowToCdk($event,'hhh')"> -->
+    HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+    ACKGROUNDPulmonary arterial hypertension is characterized by pulmonary vascular remodel-ing,  cellular  proliferation,  and  poor  long-term  outcomes. 
+     Dysfunctional  bone  morphogenetic protein pathway signaling is associated with both hereditary and idiopathic subtypes. Sotatercept, a novel fusion protein,
+      binds activins and growth differentiation factors in the attempt to restore balance between growth-promoting and growth-inhibiting signaling pathways.
+      METHODSIn this 24-week multicenter trial, we randomly assigned 106 adults who were re-ceiving background therapy for pulmonary arterial hypertension to 
+      receive subcu-taneous sotatercept at a
+     dose of 0.3 mg per kilogram of body weight every 3 weeks or 0.7 mg per kilogram every 3 weeks or placebo. 
+     The primary end point was the change from baseline to week 24 in pulmonary vascular resistance.RESULTSBaseline characteristics were
+      similar among the three groups. The least-squares mean difference between the sotatercept 0.3-mg group and the placebo group in the change from baseline 
+      to week 24 in pulmonary vascular resistance was −145.8 dyn ·  sec ·  cm−5(95%  confidence  interval  [CI],  −241.0  to  −50.6;  P  =   0.003).  
+      The  least-squares  mean  difference between the sotatercept 0.7-mg group and the placebo group was −239.5 dyn · sec · cm−5  (95%  CI,  −329.3  to  −149.7;
+         At  24  weeks,  the  least-squares  mean difference between the sotatercept 0.3-mg group and the placebo group in the change from baseline in
+         6-minute walk distance was 29.4 m (95% CI, 3.8 to 55.0). The  least-squares  mean  difference  between  the  sotatercept  0.7-mg  group  and  the 
+          placebo group was 21.4 m (95% CI, −2.8 to 45.7).
+     Sotatercept was also associated with a  decrease  in  N-terminal  pro–B-type  natriuretic  peptide 
+      levels.  Thrombocytopenia  and  an  increased  hemoglobin  level  were  the  most  common  
+      hematologic  adverse  events. One patient in the sotatercept 0.7-mg group died from cardiac
+       arrest.
+      CONCLUSIONSTreatment with sotatercept resulted in a reduction in pulmonary vascular 
+      resistance in 
+       patients  receiving  background  therapy  for  pulmonary  arterial  hypertension. 
+        (Funded by Acceleron Pharma; PULSAR ClinicalTrials.gov number, NCT03496207.)ABSTR ACTSotatercept 
+        for the Treatment of Pulmonary Arterial HypertensionMarc Humbert, M.D., Ph.D., Vallerie McLaughlin, M.D., J. Simon R. Gibbs,
+         M.D., Mardi Gomberg‑Maitland, M.D., Marius M. Hoeper, M.D., Ioana R. Preston, M.D., Rogerio Souza, M.D., Ph.D., Aaron Waxman, M.D.,
+          Ph.D., Pilar Escribano Subias, M.D., Ph.D., Jeremy Feldman, M.D., Gisela Meyer, M.D., David Montani, M.D., Ph.D., Karen M. Olsson,
+           M.D., Solaiappan Manimaran, Ph.D., Jennifer Barnes, Ph.D., Peter G. Linde, M.D., Janethe de Oliveira Pena, M.D., Ph.D., and David B. Badesch,
+            M.D., for the PULSAR Trial Investigators*  Original ArticleThe New England Journal of Medicine Downloaded from nejm.org at UNIV MISSOURI on April 6, 2021. 
+            For personal use only. No other uses without permission.  Copyright © 2021 Massachusetts Medical Society. All rights reserved. 
+n engl j med 384;13 nejm.orgApril 1, 20211205Sotatercept for Pulmonary Arterial HypertensionPulmonary  arterial  hypertension  is  a rare, progressive disorder characterized by 
+pulmonary vascular remodeling, resulting in high pulmonary artery pressure and progres-sive right ventricular dysfunction.1-3 Current treat-ments, which target the prostacyclin, 
+endothelin-1, or  nitric  oxide  pathways,  slow  disease  progres-sion.  However,  the  5-year  survival  rate  of  ap-proximately 60% highlights the need for ther-apies 
+targeting alternative pulmonary vascular remodeling pathways.1,4-7Mutations  in  bone  morphogenetic  protein  (BMP) receptor type 2 (BMPR2) — a member of the transforming
+ growth factor β (TGF-β) super-family — are a major factor underlying heritable pulmonary  arterial  hypertension;  the  BMPR-II  signaling pathway is also important in
+  develop-ment of the disease in patients without heritable disease.8-11  Owing  to  the  role  of  the  BMPR-II  pathway in maintaining endothelial integrity in pulmonary 
+  arteries, mutations that reduce signal-ing  in  this  pathway  promote  endothelial  dys-function,  increased  cellular  proliferation,  and  pulmonary vascular remodeling.
+  9,10,12-16Sotatercept  is  a  novel,  first-in-class  fusion  protein composed of the extracellular domain of the human activin receptor type IIA fused to the Fc domain of human 
+  IgG1. Sotatercept acts as a ligand trap for members of the TGF-β super-family,  thus  restoring  balance  between  the  growth-promoting activin growth differentiation factor 
+   pathway  and  the  growth-inhibiting  BMP  pathway (Fig. 1).17 Sotatercept has been evaluated in  healthy  volunteers,  in  patients  with  hemato-logic disorders, and in 
+   patients with conditions characterized  by  a  dysfunctional  TGF-β  super-family  signaling  pathway,  including  bone  loss,  chemotherapy-induced anemia, multiple myeloma, 
+   myelodysplastic syndromes, β-thalassemia, and end-stage  kidney  disease.18-24  In  the  PULSAR  trial,  we  investigated  the  safety  and  efficacy  of  sotatercept  in  
+   patients  with  pulmonary  arterial  hypertension  who  were  receiving  background  therapy for pulmonary hypertension.MethodsTrial Design and OversightPULSAR is a multicenter,
+    randomized, double-blind,  phase  2  trial  that  includes  a  24-week  placebo-controlled  treatment  period,  followed  by  an  18-month  active-drug  extension  period  that  
+    is  currently  ongoing.  Here,  we  report  the  main results from the 24-week placebo-controlled period.A  steering  committee  designed  the  trial  in  collaboration with 
+    the sponsor, Acceleron Pharma. An  institutional  review  board  or  independent  ethics committee at each trial center approved the  protocol.  An  independent  data  and  
+    safety  monitoring committee reviewed unblinded safety data  collected  6  weeks  after  the  first  dose  of  sotatercept or placebo was administered. The trial was conducted 
+    in accordance with the principles of the Declaration of Helsinki, the international ethical  guidelines  of  the  Council  for  Interna-tional  Organizations  of  Medical  Sciences, 
+     the  Good Clinical Practice guidelines of the Interna-tional  Council  for  Harmonisation,  and  applica-ble laws and regulations.25-27In  addition  to  its  role  in  the  design  
+     of  the  trial, the sponsor selected the participating trial centers; oversaw the conduct and monitoring of the trial, which were performed by a contract re-search organization (PPD);
+      received and main-tained the trial database; and performed all the data  analyses.  No  independent  analyses  of  the  data were performed. The academic authors had the authority 
+      to request additional analyses. All the authors vouch for the completeness and accuracy of the data and analyses and for the fidelity of the  trial  to  the  protocol  and  the  
+      statistical  analysis  plan,  which  are  available  with  the  full  text of this article at NEJM.org.PatientsEligible patients had confirmed pulmonary arte-rial hypertension
+       (group 1 of the updated World Health  Organization  [WHO]  classification  of  pulmonary  hypertension)  in  WHO  functional  class II or III (classes range from I to IV, with
+        higher  numbers  indicating  greater  functional  limitations), excluding the subtypes associated with portopulmonary disease, schistosomiasis, and human immunodeficiency virus 
+        infection.2A full list of inclusion and exclusion criteria is provided in the Supplementary Appendix, avail-able at NEJM.org. Patients were receiving stable background therapy 
+        or pulmonary arterial hyper-tension for at least 90 days before enrollment in the trial and continued to receive the treatment during  the  course  of  the  trial.  The  treatment 
+         consisted  of  monotherapy,  double  therapy,  or  triple therapy with combinations of endothelin-The New England Journal of Medicine Downloaded from nejm.org at UNIV MISSOURI on
+          April 6, 2021. For personal use only. No other uses without permission.  Copyright © 2021 Massachusetts Medical Society. All rights reserved. 
+n engl j med 384;13    nejm.org    April 1, 20211206The new england journal of medicinereceptor antagonists, phosphodiesterase-5 inhibi-tors, soluble guanylate cyclase stimulators, prosta-cyclin
+ analogues, or prostacyclin-receptor agonists. All the patients provided written informed consent.ProceduresInitially, eligible patients were stratified accord-ing to baseline WHO functional 
+ class and were randomly assigned in a 1:1:1 ratio by an interac-tive response technology system to one of three groups: placebo, sotatercept at a dose of 0.3 mg per kilogram of body weight,
+  or sotatercept at a dose of 0.7 mg per kilogram. During the trial, the randomization ratio was changed to 3:3:4 to increase the statistical power with respect to the sotatercept  0.7-mg 
+   group;  7  patients  had  been  enrolled at the time of this change. Sotatercept or placebo (saline) was administered by means of subcutaneous injection every 21 days.Safety and efficacy 
+   were assessed at screening and every 3 weeks thereafter for 24 weeks. Ad-verse  events  were  recorded  from  the  time  of  screening  until  8  weeks  after  the  end  of  the 
+    placebo-controlled  treatment  period.  Patients  Figure 1. Proposed Mechanism of Action for Sotatercept in Pulmonary Arterial Hypertension.The proposed mechanism of action involves 
+    rebalancing growth‑promoting and growth‑inhibiting signaling. Pulmo‑nary arterial hypertension is associated with dysregulation of the bone morphogenetic protein (BMP) receptor
+     type II (BMPR‑II)–Smad1 5 8 pathway in pulmonary vascular smooth muscle and endothelial cells, causing an imbalance between proproliferative and antiproliferative signaling
+      pathways. BMPR‑II–Smad1 5 8 pathway down‑regulation leads to increased production of activin ligands, such as activin A, growth differentiation factor 8 (GDF8), and GDF11, 
+      which contributes to activin receptor type IIA (ActRIIA)–Smad2 3 pathway up‑regulation. Increased phosphorylated Smad (pSmad)2 3 activity promotes expression of the endogenous
+       BMP antagonists gremlin‑1 and noggin.Gremlin‑1 and noggin further reduce BMP–Smad1 signaling. The overall result is that antiproliferative signaling is reduced, 
+       shifting the balance toward proproliferative activin–Smad2  signaling, which leads to pulmonary vascular remodel‑ing. Sotatercept acts to sequester excess ActRIIA 
+       ligands, thereby reducing ActRIIA–Smad2  signaling to rebalance growth‑promoting and growth‑inhibiting signaling. ALK denotes activin receptor–like kinase.ALK1
+ ActRIIA BBMPR-IIEXTRACELLULARPulmonary arterial hypertensionBMPsActivins and GDFsSmad4pSmad1 ProproliferativeGremlin-1 and
+        nogginAntiproliferativeALK1 2 3 6ALK4 5 and GDFsSotaterceptGremlin-1 and nogginBMPR-IISmad4pSmad1
+        England Journal of Medicine Downloaded from nejm.org at UNIV MISSOURI on April 6, 2021.
+         For personal use only. No other uses without permission.  Copyright © 2021 Massachusetts Medical Society. All rights reserved. 
+n engl j med 384;13 nejm.orgApril 1, 20211207Sotatercept for Pulmonary Arterial Hypertensionwho completed the placebo-controlled treatment period continued directly into
+ the 18-month ex-tension  period;  the  recording  of  adverse  events  continues in the extension period. Dose modifi-cations  were  planned  in  accordance  with  
+ guid-ance  from  the  European  Medicines  Agency  (as  outlined  in  Table  S1  in  the  Supplementary  Ap-pendix) for any occurrences of leukopenia, neu-tropenia, 
+  or  thrombocytopenia  or  increases  in  hemoglobin levels or blood pressure. These ad-verse events have been reported in previous trials of sotatercept. Patients
+   who discontinued sotater-cept or placebo or withdrew consent were asked to return for the end-of-trial visit.End PointsThe  primary  end  point  was  the  change  
+   from  baseline to week 24 in pulmonary vascular resis-tance.  The  key  secondary  end  point  was  the  change  from  baseline  to  week  24  in  6-minute  walk  
+   distance.  Other  secondary  efficacy  end  points  included  the  change  from  baseline  to  week  24  in  N-terminal  pro–B-type  natriuretic  peptide (NT-proBNP) 
+   level, systolic excursion of the  tricuspid  annular  plane  (assessed  by  echo-cardiography),  WHO  functional  class,  clinical  worsening, scores on the Cambridge 
+   Pulmonary Hypertension  Outcome  Review,  and  scores  on  the  36-Item  Short-Form  Health  Survey  (SF-36).  Safety  end  points  included  adverse  events  and  
+   clinical laboratory test results. A complete list of the trial end points is provided in Table S2.Pulmonary vascular resistance was calculated with the use of the 
+   mean pulmonary artery pres-sure, the pulmonary artery wedge pressure, and the cardiac output, all of which were measured by catheterization of the right side of the 
+   heart at screening and at week 24 of the placebo-controlled treatment period. Echocardiograms (two-dimen-sional) were obtained according to a prespeci-fied protocol 
+   and were approved, reviewed, and analyzed in a blinded manner at a central labo-ratory  (BioTel  Research).  End  points  were  as-sessed  at  baseline  and  at  
+    selected  trial  visits.  Adverse  events  were  graded  according  to  the  National Cancer Institute Common Terminology Criteria for Adverse Events (CTCAE), 
+    version 4.0. The methods used for catheterization and echo-cardiography, as well as descriptions of the end point of clinical worsening and the grades used in  the   
+    CTCAE,  are  provided  in  the  Supplemen-tary Appendix.Statistical AnalysisThe  sample-size  calculation  for  the  trial  was  based on the following assumptions: 
+    a baseline mean  (±SD)  pulmonary  vascular  resistance  of  800±400  dyn · sec · cm−5; a 30% reduction in mean pulmonary  vascular  resistance  (240  dyn · sec · cm−5)
+     at  24  weeks  in  the  sotatercept  groups  and  no  change in the placebo group; a one-sided alpha level of 0.10 and 80% power to detect the differ-ence among groups;
+      and dropout rates of 15% in the placebo group, 15% in the sotatercept 0.3-mg group, and 35% in the sotatercept 0.7-mg group. The  estimated  dropout  rate  in  the 
+       sotatercept  0.7-mg  group  was  higher  owing  to  potential  hemoglobin increases, as determined by pharma-cokinetic  modeling.  On  the  basis  of  these   
+       as-sumptions,  we  estimated  a  sample  size  of  ap-proximately 100 patients to be randomly assigned in the ratio of 3:3:4 across the three groups.All the 
+       efficacy and safety analyses were per-formed  in  the  intention-to-treat  population,  which included all the patients who underwent randomization. The primary
+        end point was ana-lyzed  with  the  use  of  an  analysis  of  covariance  (ANCOVA) model, with the randomization factor and baseline value as covariates.
+         The analysis was performed  with  a  closed  testing  procedure  for  correction of multiplicity and a hierarchical test-ing procedure. 
+         First, the sotatercept 0.7-mg group was compared with the placebo group, followed by a comparison of the sotatercept 0.3-mg group with the
+          placebo group. Multiple imputation was used to handle missing data for all the primary and secondary efficacy end points that were as-sessed 
+          as continuous variables. Other end points were  summarized  with  the  use  of  descriptive  statistics and analyzed with an ANCOVA model, as appropriate. 
+          Conventional two-sided P values are presented for the primary end point; no P values are presented for secondary and other end points. 
+          Sensitivity analyses of the primary and key sec-ondary end points were performed; in one analy-sis, only the patients who were receiving 
+          double or  triple  therapy  for  pulmonary  arterial  hyper-tension at baseline were included, and in an ad-ditional analysis, missing data 
+          were imputed with the  use  of  the  last-observation-carried-forward  method. The underlying normality assumption for ANCOVA was tested with
+           the use of the Shapiro–Wilk  test.  If  the  assumption  of  normality  was  rejected, the Hodges–Lehmann analysis was used to present the location
+            shift value. Results are The New England Journal of Medicine Downloaded from nejm.org at UNIV MISSOURI on April 6, 2021. For personal use only. 
+            o other uses without permission.  Copyright © 2021 Massachusetts Medical Society. All rights reserved. 
+</div> 
+<!-- hashInput="iii" -->
+<div id="iii"
+appObserveHashItem #intersection="intersection"
+(currentHash)="emitHash($event)" >
+ <!-- [ngClass]="{hashItem: intersection.IS_INTERSECTING}"> -->
+<!-- appHashSpy  
+(inFocusViewEventEmitter)="syncWindowToCdk($event)"> -->
+ <!-- (inFocusViewEventEmitter)="syncWindowToCdk($event,'iii')"> -->
+  IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+    ACKGROUNDPulmonary arterial hypertension is characterized by pulmonary vascular remodel-ing,  cellular  proliferation,  and  poor  long-term  outcomes. 
+     Dysfunctional  bone  morphogenetic protein pathway signaling is associated with both hereditary and idiopathic subtypes. Sotatercept, a novel fusion protein,
+      binds activins and growth differentiation factors in the attempt to restore balance between growth-promoting and growth-inhibiting signaling pathways.
+      METHODSIn this 24-week multicenter trial, we randomly assigned 106 adults who were re-ceiving background therapy for pulmonary arterial hypertension to 
+      receive subcu-taneous sotatercept at a
+     dose of 0.3 mg per kilogram of body weight every 3 weeks or 0.7 mg per kilogram every 3 weeks or placebo. 
+     The primary end point was the change from baseline to week 24 in pulmonary vascular resistance.RESULTSBaseline characteristics were
+      similar among the three groups. The least-squares mean difference between the sotatercept 0.3-mg group and the placebo group in the change from baseline 
+      to week 24 in pulmonary vascular resistance was −145.8 dyn ·  sec ·  cm−5(95%  confidence  interval  [CI],  −241.0  to  −50.6;  P  =   0.003).  
+      The  least-squares  mean  difference between the sotatercept 0.7-mg group and the placebo group was −239.5 dyn · sec · cm−5  (95%  CI,  −329.3  to  −149.7;
+         At  24  weeks,  the  least-squares  mean difference between the sotatercept 0.3-mg group and the placebo group in the change from baseline in
+         6-minute walk distance was 29.4 m (95% CI, 3.8 to 55.0). The  least-squares  mean  difference  between  the  sotatercept  0.7-mg  group  and  the 
+          placebo group was 21.4 m (95% CI, −2.8 to 45.7).
+     Sotatercept was also associated with a  decrease  in  N-terminal  pro–B-type  natriuretic  peptide 
+      levels.  Thrombocytopenia  and  an  increased  hemoglobin  level  were  the  most  common  
+      hematologic  adverse  events. One patient in the sotatercept 0.7-mg group died from cardiac
+       arrest.
+      CONCLUSIONSTreatment with sotatercept resulted in a reduction in pulmonary vascular 
+      resistance in 
+       patients  receiving  background  therapy  for  pulmonary  arterial  hypertension. 
+        (Funded by Acceleron Pharma; PULSAR ClinicalTrials.gov number, NCT03496207.)ABSTR ACTSotatercept 
+        for the Treatment of Pulmonary Arterial HypertensionMarc Humbert, M.D., Ph.D., Vallerie McLaughlin, M.D., J. Simon R. Gibbs,
+         M.D., Mardi Gomberg‑Maitland, M.D., Marius M. Hoeper, M.D., Ioana R. Preston, M.D., Rogerio Souza, M.D., Ph.D., Aaron Waxman, M.D.,
+          Ph.D., Pilar Escribano Subias, M.D., Ph.D., Jeremy Feldman, M.D., Gisela Meyer, M.D., David Montani, M.D., Ph.D., Karen M. Olsson,
+           M.D., Solaiappan Manimaran, Ph.D., Jennifer Barnes, Ph.D., Peter G. Linde, M.D., Janethe de Oliveira Pena, M.D., Ph.D., and David B. Badesch,
+            M.D., for the PULSAR Trial Investigators*  Original ArticleThe New England Journal of Medicine Downloaded from nejm.org at UNIV MISSOURI on April 6, 2021. 
+            For personal use only. No other uses without permission.  Copyright © 2021 Massachusetts Medical Society. All rights reserved. 
+n engl j med 384;13 nejm.orgApril 1, 20211205Sotatercept for Pulmonary Arterial HypertensionPulmonary  arterial  hypertension  is  a rare, progressive disorder characterized by 
+pulmonary vascular remodeling, resulting in high pulmonary artery pressure and progres-sive right ventricular dysfunction.1-3 Current treat-ments, which target the prostacyclin, 
+endothelin-1, or  nitric  oxide  pathways,  slow  disease  progres-sion.  However,  the  5-year  survival  rate  of  ap-proximately 60% highlights the need for ther-apies 
+targeting alternative pulmonary vascular remodeling pathways.1,4-7Mutations  in  bone  morphogenetic  protein  (BMP) receptor type 2 (BMPR2) — a member of the transforming
+ growth factor β (TGF-β) super-family — are a major factor underlying heritable pulmonary  arterial  hypertension;  the  BMPR-II  signaling pathway is also important in
+  develop-ment of the disease in patients without heritable disease.8-11  Owing  to  the  role  of  the  BMPR-II  pathway in maintaining endothelial integrity in pulmonary 
+  arteries, mutations that reduce signal-ing  in  this  pathway  promote  endothelial  dys-function,  increased  cellular  proliferation,  and  pulmonary vascular remodeling.
+  9,10,12-16Sotatercept  is  a  novel,  first-in-class  fusion  protein composed of the extracellular domain of the human activin receptor type IIA fused to the Fc domain of human 
+  IgG1. Sotatercept acts as a ligand trap for members of the TGF-β super-family,  thus  restoring  balance  between  the  growth-promoting activin growth differentiation factor 
+   pathway  and  the  growth-inhibiting  BMP  pathway (Fig. 1).17 Sotatercept has been evaluated in  healthy  volunteers,  in  patients  with  hemato-logic disorders, and in 
+   patients with conditions characterized  by  a  dysfunctional  TGF-β  super-family  signaling  pathway,  including  bone  loss,  chemotherapy-induced anemia, multiple myeloma, 
+   myelodysplastic syndromes, β-thalassemia, and end-stage  kidney  disease.18-24  In  the  PULSAR  trial,  we  investigated  the  safety  and  efficacy  of  sotatercept  in  
+   patients  with  pulmonary  arterial  hypertension  who  were  receiving  background  therapy for pulmonary hypertension.MethodsTrial Design and OversightPULSAR is a multicenter,
+    randomized, double-blind,  phase  2  trial  that  includes  a  24-week  placebo-controlled  treatment  period,  followed  by  an  18-month  active-drug  extension  period  that  
+    is  currently  ongoing.  Here,  we  report  the  main results from the 24-week placebo-controlled period.A  steering  committee  designed  the  trial  in  collaboration with 
+    the sponsor, Acceleron Pharma. An  institutional  review  board  or  independent  ethics committee at each trial center approved the  protocol.  An  independent  data  and  
+    safety  monitoring committee reviewed unblinded safety data  collected  6  weeks  after  the  first  dose  of  sotatercept or placebo was administered. The trial was conducted 
+    in accordance with the principles of the Declaration of Helsinki, the international ethical  guidelines  of  the  Council  for  Interna-tional  Organizations  of  Medical  Sciences, 
+     the  Good Clinical Practice guidelines of the Interna-tional  Council  for  Harmonisation,  and  applica-ble laws and regulations.25-27In  addition  to  its  role  in  the  design  
+     of  the  trial, the sponsor selected the participating trial centers; oversaw the conduct and monitoring of the trial, which were performed by a contract re-search organization (PPD);
+      received and main-tained the trial database; and performed all the data  analyses.  No  independent  analyses  of  the  data were performed. The academic authors had the authority 
+      to request additional analyses. All the authors vouch for the completeness and accuracy of the data and analyses and for the fidelity of the  trial  to  the  protocol  and  the  
+      statistical  analysis  plan,  which  are  available  with  the  full  text of this article at NEJM.org.PatientsEligible patients had confirmed pulmonary arte-rial hypertension
+       (group 1 of the updated World Health  Organization  [WHO]  classification  of  pulmonary  hypertension)  in  WHO  functional  class II or III (classes range from I to IV, with
+        higher  numbers  indicating  greater  functional  limitations), excluding the subtypes associated with portopulmonary disease, schistosomiasis, and human immunodeficiency virus 
+        infection.2A full list of inclusion and exclusion criteria is provided in the Supplementary Appendix, avail-able at NEJM.org. Patients were receiving stable background therapy 
+        or pulmonary arterial hyper-tension for at least 90 days before enrollment in the trial and continued to receive the treatment during  the  course  of  the  trial.  The  treatment 
+         consisted  of  monotherapy,  double  therapy,  or  triple therapy with combinations of endothelin-The New England Journal of Medicine Downloaded from nejm.org at UNIV MISSOURI on
+          April 6, 2021. For personal use only. No other uses without permission.  Copyright © 2021 Massachusetts Medical Society. All rights reserved. 
+n engl j med 384;13    nejm.org    April 1, 20211206The new england journal of medicinereceptor antagonists, phosphodiesterase-5 inhibi-tors, soluble guanylate cyclase stimulators, prosta-cyclin
+ analogues, or prostacyclin-receptor agonists. All the patients provided written informed consent.ProceduresInitially, eligible patients were stratified accord-ing to baseline WHO functional 
+ class and were randomly assigned in a 1:1:1 ratio by an interac-tive response technology system to one of three groups: placebo, sotatercept at a dose of 0.3 mg per kilogram of body weight,
+  or sotatercept at a dose of 0.7 mg per kilogram. During the trial, the randomization ratio was changed to 3:3:4 to increase the statistical power with respect to the sotatercept  0.7-mg 
+   group;  7  patients  had  been  enrolled at the time of this change. Sotatercept or placebo (saline) was administered by means of subcutaneous injection every 21 days.Safety and efficacy 
+   were assessed at screening and every 3 weeks thereafter for 24 weeks. Ad-verse  events  were  recorded  from  the  time  of  screening  until  8  weeks  after  the  end  of  the 
+    placebo-controlled  treatment  period.  Patients  Figure 1. Proposed Mechanism of Action for Sotatercept in Pulmonary Arterial Hypertension.The proposed mechanism of action involves 
+    rebalancing growth‑promoting and growth‑inhibiting signaling. Pulmo‑nary arterial hypertension is associated with dysregulation of the bone morphogenetic protein (BMP) receptor
+     type II (BMPR‑II)–Smad1 5 8 pathway in pulmonary vascular smooth muscle and endothelial cells, causing an imbalance between proproliferative and antiproliferative signaling
+      pathways. BMPR‑II–Smad1 5 8 pathway down‑regulation leads to increased production of activin ligands, such as activin A, growth differentiation factor 8 (GDF8), and GDF11, 
+      which contributes to activin receptor type IIA (ActRIIA)–Smad2 3 pathway up‑regulation. Increased phosphorylated Smad (pSmad)2 3 activity promotes expression of the endogenous
+       BMP antagonists gremlin‑1 and noggin.Gremlin‑1 and noggin further reduce BMP–Smad1 signaling. The overall result is that antiproliferative signaling is reduced, 
+       shifting the balance toward proproliferative activin–Smad2  signaling, which leads to pulmonary vascular remodel‑ing. Sotatercept acts to sequester excess ActRIIA 
+       ligands, thereby reducing ActRIIA–Smad2  signaling to rebalance growth‑promoting and growth‑inhibiting signaling. ALK denotes activin receptor–like kinase.ALK1
+ ActRIIA BBMPR-IIEXTRACELLULARPulmonary arterial hypertensionBMPsActivins and GDFsSmad4pSmad1 ProproliferativeGremlin-1 and
+        nogginAntiproliferativeALK1 2 3 6ALK4 5 and GDFsSotaterceptGremlin-1 and nogginBMPR-IISmad4pSmad1
+        England Journal of Medicine Downloaded from nejm.org at UNIV MISSOURI on April 6, 2021.
+         For personal use only. No other uses without permission.  Copyright © 2021 Massachusetts Medical Society. All rights reserved. 
+n engl j med 384;13 nejm.orgApril 1, 20211207Sotatercept for Pulmonary Arterial Hypertensionwho completed the placebo-controlled treatment period continued directly into
+ the 18-month ex-tension  period;  the  recording  of  adverse  events  continues in the extension period. Dose modifi-cations  were  planned  in  accordance  with  
+ guid-ance  from  the  European  Medicines  Agency  (as  outlined  in  Table  S1  in  the  Supplementary  Ap-pendix) for any occurrences of leukopenia, neu-tropenia, 
+  or  thrombocytopenia  or  increases  in  hemoglobin levels or blood pressure. These ad-verse events have been reported in previous trials of sotatercept. Patients
+   who discontinued sotater-cept or placebo or withdrew consent were asked to return for the end-of-trial visit.End PointsThe  primary  end  point  was  the  change  
+   from  baseline to week 24 in pulmonary vascular resis-tance.  The  key  secondary  end  point  was  the  change  from  baseline  to  week  24  in  6-minute  walk  
+   distance.  Other  secondary  efficacy  end  points  included  the  change  from  baseline  to  week  24  in  N-terminal  pro–B-type  natriuretic  peptide (NT-proBNP) 
+   level, systolic excursion of the  tricuspid  annular  plane  (assessed  by  echo-cardiography),  WHO  functional  class,  clinical  worsening, scores on the Cambridge 
+   Pulmonary Hypertension  Outcome  Review,  and  scores  on  the  36-Item  Short-Form  Health  Survey  (SF-36).  Safety  end  points  included  adverse  events  and  
+   clinical laboratory test results. A complete list of the trial end points is provided in Table S2.Pulmonary vascular resistance was calculated with the use of the 
+   mean pulmonary artery pres-sure, the pulmonary artery wedge pressure, and the cardiac output, all of which were measured by catheterization of the right side of the 
+   heart at screening and at week 24 of the placebo-controlled treatment period. Echocardiograms (two-dimen-sional) were obtained according to a prespeci-fied protocol 
+   and were approved, reviewed, and analyzed in a blinded manner at a central labo-ratory  (BioTel  Research).  End  points  were  as-sessed  at  baseline  and  at  
+    selected  trial  visits.  Adverse  events  were  graded  according  to  the  National Cancer Institute Common Terminology Criteria for Adverse Events (CTCAE), 
+    version 4.0. The methods used for catheterization and echo-cardiography, as well as descriptions of the end point of clinical worsening and the grades used in  the   
+    CTCAE,  are  provided  in  the  Supplemen-tary Appendix.Statistical AnalysisThe  sample-size  calculation  for  the  trial  was  based on the following assumptions: 
+    a baseline mean  (±SD)  pulmonary  vascular  resistance  of  800±400  dyn · sec · cm−5; a 30% reduction in mean pulmonary  vascular  resistance  (240  dyn · sec · cm−5)
+     at  24  weeks  in  the  sotatercept  groups  and  no  change in the placebo group; a one-sided alpha level of 0.10 and 80% power to detect the differ-ence among groups;
+      and dropout rates of 15% in the placebo group, 15% in the sotatercept 0.3-mg group, and 35% in the sotatercept 0.7-mg group. The  estimated  dropout  rate  in  the 
+       sotatercept  0.7-mg  group  was  higher  owing  to  potential  hemoglobin increases, as determined by pharma-cokinetic  modeling.  On  the  basis  of  these   
+       as-sumptions,  we  estimated  a  sample  size  of  ap-proximately 100 patients to be randomly assigned in the ratio of 3:3:4 across the three groups.All the 
+       efficacy and safety analyses were per-formed  in  the  intention-to-treat  population,  which included all the patients who underwent randomization. The primary
+        end point was ana-lyzed  with  the  use  of  an  analysis  of  covariance  (ANCOVA) model, with the randomization factor and baseline value as covariates.
+         The analysis was performed  with  a  closed  testing  procedure  for  correction of multiplicity and a hierarchical test-ing procedure. 
+         First, the sotatercept 0.7-mg group was compared with the placebo group, followed by a comparison of the sotatercept 0.3-mg group with the
+          placebo group. Multiple imputation was used to handle missing data for all the primary and secondary efficacy end points that were as-sessed 
+          as continuous variables. Other end points were  summarized  with  the  use  of  descriptive  statistics and analyzed with an ANCOVA model, as appropriate. 
+          Conventional two-sided P values are presented for the primary end point; no P values are presented for secondary and other end points. 
+          Sensitivity analyses of the primary and key sec-ondary end points were performed; in one analy-sis, only the patients who were receiving 
+          double or  triple  therapy  for  pulmonary  arterial  hyper-tension at baseline were included, and in an ad-ditional analysis, missing data 
+          were imputed with the  use  of  the  last-observation-carried-forward  method. The underlying normality assumption for ANCOVA was tested with
+           the use of the Shapiro–Wilk  test.  If  the  assumption  of  normality  was  rejected, the Hodges–Lehmann analysis was used to present the location
+            shift value. Results are The New England Journal of Medicine Downloaded from nejm.org at UNIV MISSOURI on April 6, 2021. For personal use only. 
+            o other uses without permission.  Copyright © 2021 Massachusetts Medical Society. All rights reserved. 
+
+</div> 
+<!-- hashInput="jjj" -->
+<div id="jjj"
+appObserveHashItem #intersection="intersection"
+(currentHash)="emitHash($event)" >
+ <!-- [ngClass]="{hashItem: intersection.IS_INTERSECTING}"> -->
+<!-- appHashSpy 
+(inFocusViewEventEmitter)="syncWindowToCdk($event)"> -->
+ <!-- (inFocusViewEventEmitter)="syncWindowToCdk($event,'jjj')"> -->
+  JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ
+  JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ
+    ACKGROUNDPulmonary arterial hypertension is characterized by pulmonary vascular remodel-ing,  cellular  proliferation,  and  poor  long-term  outcomes. 
+     Dysfunctional  bone  morphogenetic protein pathway signaling is associated with both hereditary and idiopathic subtypes. Sotatercept, a novel fusion protein,
+      binds activins and growth differentiation factors in the attempt to restore balance between growth-promoting and growth-inhibiting signaling pathways.
+      METHODSIn this 24-week multicenter trial, we randomly assigned 106 adults who were re-ceiving background therapy for pulmonary arterial hypertension to 
+      receive subcu-taneous sotatercept at a
+     dose of 0.3 mg per kilogram of body weight every 3 weeks or 0.7 mg per kilogram every 3 weeks or placebo. 
+     The primary end point was the change from baseline to week 24 in pulmonary vascular resistance.RESULTSBaseline characteristics were
+      similar among the three groups. The least-squares mean difference between the sotatercept 0.3-mg group and the placebo group in the change from baseline 
+      to week 24 in pulmonary vascular resistance was −145.8 dyn ·  sec ·  cm−5(95%  confidence  interval  [CI],  −241.0  to  −50.6;  P  =   0.003).  
+      The  least-squares  mean  difference between the sotatercept 0.7-mg group and the placebo group was −239.5 dyn · sec · cm−5  (95%  CI,  −329.3  to  −149.7;
+          At  24  weeks,  the  least-squares  mean difference between the sotatercept 0.3-mg group and the placebo group in the change from baseline in
+         6-minute walk distance was 29.4 m (95% CI, 3.8 to 55.0). The  least-squares  mean  difference  between  the  sotatercept  0.7-mg  group  and  the 
+          placebo group was 21.4 m (95% CI, −2.8 to 45.7).
+     Sotatercept was also associated with a  decrease  in  N-terminal  pro–B-type  natriuretic  peptide 
+      levels.  Thrombocytopenia  and  an  increased  hemoglobin  level  were  the  most  common  
+      hematologic  adverse  events. One patient in the sotatercept 0.7-mg group died from cardiac
+       arrest.
+      CONCLUSIONSTreatment with sotatercept resulted in a reduction in pulmonary vascular 
+      resistance in 
+       patients  receiving  background  therapy  for  pulmonary  arterial  hypertension. 
+        (Funded by Acceleron Pharma; PULSAR ClinicalTrials.gov number, NCT03496207.)ABSTR ACTSotatercept 
+        for the Treatment of Pulmonary Arterial HypertensionMarc Humbert, M.D., Ph.D., Vallerie McLaughlin, M.D., J. Simon R. Gibbs,
+         M.D., Mardi Gomberg‑Maitland, M.D., Marius M. Hoeper, M.D., Ioana R. Preston, M.D., Rogerio Souza, M.D., Ph.D., Aaron Waxman, M.D.,
+          Ph.D., Pilar Escribano Subias, M.D., Ph.D., Jeremy Feldman, M.D., Gisela Meyer, M.D., David Montani, M.D., Ph.D., Karen M. Olsson,
+           M.D., Solaiappan Manimaran, Ph.D., Jennifer Barnes, Ph.D., Peter G. Linde, M.D., Janethe de Oliveira Pena, M.D., Ph.D., and David B. Badesch,
+            M.D., for the PULSAR Trial Investigators*  Original ArticleThe New England Journal of Medicine Downloaded from nejm.org at UNIV MISSOURI on April 6, 2021. 
+            For personal use only. No other uses without permission.  Copyright © 2021 Massachusetts Medical Society. All rights reserved. 
+n engl j med 384;13 nejm.orgApril 1, 20211205Sotatercept for Pulmonary Arterial HypertensionPulmonary  arterial  hypertension  is  a rare, progressive disorder characterized by 
+pulmonary vascular remodeling, resulting in high pulmonary artery pressure and progres-sive right ventricular dysfunction.1-3 Current treat-ments, which target the prostacyclin, 
+endothelin-1, or  nitric  oxide  pathways,  slow  disease  progres-sion.  However,  the  5-year  survival  rate  of  ap-proximately 60% highlights the need for ther-apies 
+targeting alternative pulmonary vascular remodeling pathways.1,4-7Mutations  in  bone  morphogenetic  protein  (BMP) receptor type 2 (BMPR2) — a member of the transforming
+ growth factor β (TGF-β) super-family — are a major factor underlying heritable pulmonary  arterial  hypertension;  the  BMPR-II  signaling pathway is also important in
+  develop-ment of the disease in patients without heritable disease.8-11  Owing  to  the  role  of  the  BMPR-II  pathway in maintaining endothelial integrity in pulmonary 
+  arteries, mutations that reduce signal-ing  in  this  pathway  promote  endothelial  dys-function,  increased  cellular  proliferation,  and  pulmonary vascular remodeling.
+  9,10,12-16Sotatercept  is  a  novel,  first-in-class  fusion  protein composed of the extracellular domain of the human activin receptor type IIA fused to the Fc domain of human 
+  IgG1. Sotatercept acts as a ligand trap for members of the TGF-β super-family,  thus  restoring  balance  between  the  growth-promoting activin growth differentiation factor 
+   pathway  and  the  growth-inhibiting  BMP  pathway (Fig. 1).17 Sotatercept has been evaluated in  healthy  volunteers,  in  patients  with  hemato-logic disorders, and in 
+   patients with conditions characterized  by  a  dysfunctional  TGF-β  super-family  signaling  pathway,  including  bone  loss,  chemotherapy-induced anemia, multiple myeloma, 
+   myelodysplastic syndromes, β-thalassemia, and end-stage  kidney  disease.18-24  In  the  PULSAR  trial,  we  investigated  the  safety  and  efficacy  of  sotatercept  in  
+   patients  with  pulmonary  arterial  hypertension  who  were  receiving  background  therapy for pulmonary hypertension.MethodsTrial Design and OversightPULSAR is a multicenter,
+    randomized, double-blind,  phase  2  trial  that  includes  a  24-week  placebo-controlled  treatment  period,  followed  by  an  18-month  active-drug  extension  period  that  
+    is  currently  ongoing.  Here,  we  report  the  main results from the 24-week placebo-controlled period.A  steering  committee  designed  the  trial  in  collaboration with 
+    the sponsor, Acceleron Pharma. An  institutional  review  board  or  independent  ethics committee at each trial center approved the  protocol.  An  independent  data  and  
+    safety  monitoring committee reviewed unblinded safety data  collected  6  weeks  after  the  first  dose  of  sotatercept or placebo was administered. The trial was conducted 
+    in accordance with the principles of the Declaration of Helsinki, the international ethical  guidelines  of  the  Council  for  Interna-tional  Organizations  of  Medical  Sciences, 
+     the  Good Clinical Practice guidelines of the Interna-tional  Council  for  Harmonisation,  and  applica-ble laws and regulations.25-27In  addition  to  its  role  in  the  design  
+     of  the  trial, the sponsor selected the participating trial centers; oversaw the conduct and monitoring of the trial, which were performed by a contract re-search organization (PPD);
+      received and main-tained the trial database; and performed all the data  analyses.  No  independent  analyses  of  the  data were performed. The academic authors had the authority 
+      to request additional analyses. All the authors vouch for the completeness and accuracy of the data and analyses and for the fidelity of the  trial  to  the  protocol  and  the  
+      statistical  analysis  plan,  which  are  available  with  the  full  text of this article at NEJM.org.PatientsEligible patients had confirmed pulmonary arte-rial hypertension
+       (group 1 of the updated World Health  Organization  [WHO]  classification  of  pulmonary  hypertension)  in  WHO  functional  class II or III (classes range from I to IV, with
+        higher  numbers  indicating  greater  functional  limitations), excluding the subtypes associated with portopulmonary disease, schistosomiasis, and human immunodeficiency virus 
+        infection.2A full list of inclusion and exclusion criteria is provided in the Supplementary Appendix, avail-able at NEJM.org. Patients were receiving stable background therapy 
+        or pulmonary arterial hyper-tension for at least 90 days before enrollment in the trial and continued to receive the treatment during  the  course  of  the  trial.  The  treatment 
+         consisted  of  monotherapy,  double  therapy,  or  triple therapy with combinations of endothelin-The New England Journal of Medicine Downloaded from nejm.org at UNIV MISSOURI on
+          April 6, 2021. For personal use only. No other uses without permission.  Copyright © 2021 Massachusetts Medical Society. All rights reserved. 
+n engl j med 384;13    nejm.org    April 1, 20211206The new england journal of medicinereceptor antagonists, phosphodiesterase-5 inhibi-tors, soluble guanylate cyclase stimulators, prosta-cyclin
+ analogues, or prostacyclin-receptor agonists. All the patients provided written informed consent.ProceduresInitially, eligible patients were stratified accord-ing to baseline WHO functional 
+ class and were randomly assigned in a 1:1:1 ratio by an interac-tive response technology system to one of three groups: placebo, sotatercept at a dose of 0.3 mg per kilogram of body weight,
+  or sotatercept at a dose of 0.7 mg per kilogram. During the trial, the randomization ratio was changed to 3:3:4 to increase the statistical power with respect to the sotatercept  0.7-mg 
+   group;  7  patients  had  been  enrolled at the time of this change. Sotatercept or placebo (saline) was administered by means of subcutaneous injection every 21 days.Safety and efficacy 
+   were assessed at screening and every 3 weeks thereafter for 24 weeks. Ad-verse  events  were  recorded  from  the  time  of  screening  until  8  weeks  after  the  end  of  the 
+    placebo-controlled  treatment  period.  Patients  Figure 1. Proposed Mechanism of Action for Sotatercept in Pulmonary Arterial Hypertension.The proposed mechanism of action involves 
+    rebalancing growth‑promoting and growth‑inhibiting signaling. Pulmo‑nary arterial hypertension is associated with dysregulation of the bone morphogenetic protein (BMP) receptor
+     type II (BMPR‑II)–Smad1 5 8 pathway in pulmonary vascular smooth muscle and endothelial cells, causing an imbalance between proproliferative and antiproliferative signaling
+      pathways. BMPR‑II–Smad1 5 8 pathway down‑regulation leads to increased production of activin ligands, such as activin A, growth differentiation factor 8 (GDF8), and GDF11, 
+      which contributes to activin receptor type IIA (ActRIIA)–Smad2 3 pathway up‑regulation. Increased phosphorylated Smad (pSmad)2 3 activity promotes expression of the endogenous
+       BMP antagonists gremlin‑1 and noggin.Gremlin‑1 and noggin further reduce BMP–Smad1 signaling. The overall result is that antiproliferative signaling is reduced, 
+       shifting the balance toward proproliferative activin–Smad2  signaling, which leads to pulmonary vascular remodel‑ing. Sotatercept acts to sequester excess ActRIIA 
+       ligands, thereby reducing ActRIIA–Smad2  signaling to rebalance growth‑promoting and growth‑inhibiting signaling. ALK denotes activin receptor–like kinase.ALK1
+ ActRIIA BBMPR-IIEXTRACELLULARPulmonary arterial hypertensionBMPsActivins and GDFsSmad4pSmad1 ProproliferativeGremlin-1 and
+        nogginAntiproliferativeALK1 2 3 6ALK4 5 and GDFsSotaterceptGremlin-1 and nogginBMPR-IISmad4pSmad1
+        England Journal of Medicine Downloaded from nejm.org at UNIV MISSOURI on April 6, 2021.
+         For personal use only. No other uses without permission.  Copyright © 2021 Massachusetts Medical Society. All rights reserved. 
+n engl j med 384;13 nejm.orgApril 1, 20211207Sotatercept for Pulmonary Arterial Hypertensionwho completed the placebo-controlled treatment period continued directly into
+ the 18-month ex-tension  period;  the  recording  of  adverse  events  continues in the extension period. Dose modifi-cations  were  planned  in  accordance  with  
+ guid-ance  from  the  European  Medicines  Agency  (as  outlined  in  Table  S1  in  the  Supplementary  Ap-pendix) for any occurrences of leukopenia, neu-tropenia, 
+  or  thrombocytopenia  or  increases  in  hemoglobin levels or blood pressure. These ad-verse events have been reported in previous trials of sotatercept. Patients
+   who discontinued sotater-cept or placebo or withdrew consent were asked to return for the end-of-trial visit.End PointsThe  primary  end  point  was  the  change  
+   from  baseline to week 24 in pulmonary vascular resis-tance.  The  key  secondary  end  point  was  the  change  from  baseline  to  week  24  in  6-minute  walk  
+   distance.  Other  secondary  efficacy  end  points  included  the  change  from  baseline  to  week  24  in  N-terminal  pro–B-type  natriuretic  peptide (NT-proBNP) 
+   level, systolic excursion of the  tricuspid  annular  plane  (assessed  by  echo-cardiography),  WHO  functional  class,  clinical  worsening, scores on the Cambridge 
+   Pulmonary Hypertension  Outcome  Review,  and  scores  on  the  36-Item  Short-Form  Health  Survey  (SF-36).  Safety  end  points  included  adverse  events  and  
+   clinical laboratory test results. A complete list of the trial end points is provided in Table S2.Pulmonary vascular resistance was calculated with the use of the 
+   mean pulmonary artery pres-sure, the pulmonary artery wedge pressure, and the cardiac output, all of which were measured by catheterization of the right side of the 
+   heart at screening and at week 24 of the placebo-controlled treatment period. Echocardiograms (two-dimen-sional) were obtained according to a prespeci-fied protocol 
+   and were approved, reviewed, and analyzed in a blinded manner at a central labo-ratory  (BioTel  Research).  End  points  were  as-sessed  at  baseline  and  at  
+    selected  trial  visits.  Adverse  events  were  graded  according  to  the  National Cancer Institute Common Terminology Criteria for Adverse Events (CTCAE), 
+    version 4.0. The methods used for catheterization and echo-cardiography, as well as descriptions of the end point of clinical worsening and the grades used in  the   
+    CTCAE,  are  provided  in  the  Supplemen-tary Appendix.Statistical AnalysisThe  sample-size  calculation  for  the  trial  was  based on the following assumptions: 
+    a baseline mean  (±SD)  pulmonary  vascular  resistance  of  800±400  dyn · sec · cm−5; a 30% reduction in mean pulmonary  vascular  resistance  (240  dyn · sec · cm−5)
+     at  24  weeks  in  the  sotatercept  groups  and  no  change in the placebo group; a one-sided alpha level of 0.10 and 80% power to detect the differ-ence among groups;
+      and dropout rates of 15% in the placebo group, 15% in the sotatercept 0.3-mg group, and 35% in the sotatercept 0.7-mg group. The  estimated  dropout  rate  in  the 
+       sotatercept  0.7-mg  group  was  higher  owing  to  potential  hemoglobin increases, as determined by pharma-cokinetic  modeling.  On  the  basis  of  these   
+       as-sumptions,  we  estimated  a  sample  size  of  ap-proximately 100 patients to be randomly assigned in the ratio of 3:3:4 across the three groups.All the 
+       efficacy and safety analyses were per-formed  in  the  intention-to-treat  population,  which included all the patients who underwent randomization. The primary
+        end point was ana-lyzed  with  the  use  of  an  analysis  of  covariance  (ANCOVA) model, with the randomization factor and baseline value as covariates.
+         The analysis was performed  with  a  closed  testing  procedure  for  correction of multiplicity and a hierarchical test-ing procedure. 
+         First, the sotatercept 0.7-mg group was compared with the placebo group, followed by a comparison of the sotatercept 0.3-mg group with the
+          placebo group. Multiple imputation was used to handle missing data for all the primary and secondary efficacy end points that were as-sessed 
+          as continuous variables. Other end points were  summarized  with  the  use  of  descriptive  statistics and analyzed with an ANCOVA model, as appropriate. 
+          Conventional two-sided P values are presented for the primary end point; no P values are presented for secondary and other end points. 
+          Sensitivity analyses of the primary and key sec-ondary end points were performed; in one analy-sis, only the patients who were receiving 
+          double or  triple  therapy  for  pulmonary  arterial  hyper-tension at baseline were included, and in an ad-ditional analysis, missing data 
+          were imputed with the  use  of  the  last-observation-carried-forward  method. The underlying normality assumption for ANCOVA was tested with
+           the use of the Shapiro–Wilk  test.  If  the  assumption  of  normality  was  rejected, the Hodges–Lehmann analysis was used to present the location
+            shift value. Results are The New England Journal of Medicine Downloaded from nejm.org at UNIV MISSOURI on April 6, 2021. For personal use only. 
+            o other uses without permission.  Copyright © 2021 Massachusetts Medical Society. All rights reserved. 
+</div> 
+<!-- hashInput="kkk"   -->********************************************************
+<div id = "kkk"
+appObserveHashItem #intersection="intersection"
+(currentHash)="emitHash($event)" >
+ <!-- [ngClass]="{hashItem: intersection.IS_INTERSECTING}"> -->
+<!-- appHashSpy 
+(inFocusViewEventEmitter)="syncWindowToCdk($event)"> -->
+ <!-- (inFocusViewEventEmitter)="syncWindowToCdk($event,'kkk')"> -->
+kkkkkkkkkkkkvkkkvkkvkvkvkvkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkvkkkvkkvkvkvkvkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkvkkkvkkvkvkvkvkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkvkkkvkkvkvkvkvkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+
+  These events heightened Confederate support within the state.
+   Governor Jackson appointed Sterling Price, president of the convention on secession, as head of the
+    new Missouri State Guard. In the face of Union General Lyon's rapid advance through the state, 
+    Jackson and Price were forced to flee the capital of Jefferson City on June 14, 1861. In Neosho,
+     Missouri, Jackson called the state legislature into session to call for secession. However, 
+     the elected legislative body was split between pro-Union and pro-Confederate. As such, few of 
+     the pro-unionist attended the session called in Neosho, and the ordinance of secession was quickly 
+     adopted. The Confederacy recognized Missouri secession on October 30, 1861.
+
+  With the elected governor absent from the capital and the legislators largely dispersed, the state
+   convention was reassembled with most of its members present, save twenty who fled south with
+    Jackson's forces. The convention declared all offices vacant and installed Hamilton Gamble as 
+    the new governor of Missouri. President Lincoln's administration immediately recognized Gamble's 
+    government as the legal Missouri government. The federal government's decision enabled raising 
+    pro-Union militia forces for service within the state and volunteer regiments for the Union Army.
+  
+  Fighting ensued between Union forces and a combined army of General Price's Missouri State Guard and
+   Confederate troops from Arkansas and Texas under General Ben McCulloch. After winning victories at 
+   the battle of Wilson's Creek and the siege of Lexington, Missouri and suffering losses elsewhere, 
+   the Confederate forces retreated to Arkansas and later Marshall, Texas, in the face of a largely 
+   reinforced Union Army.
+  
+  Though regular Confederate troops staged some large-scale raids into Missouri, the fighting in the 
+  state for the next three years consisted chiefly of guerrilla warfare. "Citizen soldiers" or 
+  insurgents such as Captain William Quantrill, Frank and Jesse James, the Younger brothers, 
+  and William T. Anderson made use of quick, small-unit tactics. Pioneered by the Missouri 
+  Partisan Rangers, such insurgencies also arose in portions of the Confederacy occupied by the
+   Union during the Civil War. Historians have portrayed stories of the James brothers' outlaw 
+   years as an American "Robin Hood" myth.[37] The vigilante activities of the Bald Knobbers of the 
+   Ozarks in the 1880s were an unofficial continuation of insurgent mentality long after the official 
+   end of the war, and they are a favorite theme in Branson's self-image.[38] 
+   These events heightened Confederate support within the state.
+   Governor Jackson appointed Sterling Price, president of the convention on secession, as head of the
+    new Missouri State Guard. In the face of Union General Lyon's rapid advance through the state, 
+    Jackson and Price were forced to flee the capital of Jefferson City on June 14, 1861. In Neosho,
+     Missouri, Jackson called the state legislature into session to call for secession. However, 
+     the elected legislative body was split between pro-Union and pro-Confederate. As such, few of 
+     the pro-unionist attended the session called in Neosho, and the ordinance of secession was quickly 
+     adopted. The Confederacy recognized Missouri secession on October 30, 1861.
+
+  With the elected governor absent from the capital and the legislators largely dispersed, the state
+   convention was reassembled with most of its members present, save twenty who fled south with
+    Jackson's forces. The convention declared all offices vacant and installed Hamilton Gamble as 
+    the new governor of Missouri. President Lincoln's administration immediately recognized Gamble's 
+    government as the legal Missouri government. The federal government's decision enabled raising 
+    pro-Union militia forces for service within the state and volunteer regiments for the Union Army.
+  
+  Fighting ensued between Union forces and a combined army of General Price's Missouri State Guard and
+   Confederate troops from Arkansas and Texas under General Ben McCulloch. After winning victories at 
+   the battle of Wilson's Creek and the siege of Lexington, Missouri and suffering losses elsewhere, 
+   the Confederate forces retreated to Arkansas and later Marshall, Texas, in the face of a largely 
+   reinforced Union Army.
+  
+  Though regular Confederate troops staged some large-scale raids into Missouri, the fighting in the 
+  state for the next three years consisted chiefly of guerrilla warfare. "Citizen soldiers" or 
+  insurgents such as Captain William Quantrill, Frank and Jesse James, the Younger brothers, 
+  and William T. Anderson made use of quick, small-unit tactics. Pioneered by the Missouri 
+  Partisan Rangers, such insurgencies also arose in portions of the Confederacy occupied by the
+   Union during the Civil War. Historians have portrayed stories of the James brothers' outlaw 
+   years as an American "Robin Hood" myth.[37] The vigilante activities of the Bald Knobbers of the 
+   Ozarks in the 1880s were an unofficial continuation of insurgent mentality long after the official 
+   end of the war, and they are a favorite theme in Branson's self-image.[38] 
+   These events heightened Confederate support within the state.
+   Governor Jackson appointed Sterling Price, president of the convention on secession, as head of the
+    new Missouri State Guard. In the face of Union General Lyon's rapid advance through the state, 
+    Jackson and Price were forced to flee the capital of Jefferson City on June 14, 1861. In Neosho,
+     Missouri, Jackson called the state legislature into session to call for secession. However, 
+     the elected legislative body was split between pro-Union and pro-Confederate. As such, few of 
+     the pro-unionist attended the session called in Neosho, and the ordinance of secession was quickly 
+     adopted. The Confederacy recognized Missouri secession on October 30, 1861.
+     kkkkkkkkkkkkvkkkvkkvkvkvkvkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkvkkkvkkvkvkvkvkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkvkkkvkkvkvkvkvkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkvkkkvkkvkvkvkvkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+
+  With the elected governor absent from the capital and the legislators largely dispersed, the state
+   convention was reassembled with most of its members present, save twenty who fled south with
+    Jackson's forces. The convention declared all offices vacant and installed Hamilton Gamble as 
+    the new governor of Missouri. President Lincoln's administration immediately recognized Gamble's 
+    government as the legal Missouri government. The federal government's decision enabled raising 
+    pro-Union militia forces for service within the state and volunteer regiments for the Union Army.
+  
+  Fighting ensued between Union forces and a combined army of General Price's Missouri State Guard and
+   Confederate troops from Arkansas and Texas under General Ben McCulloch. After winning victories at 
+   the battle of Wilson's Creek and the siege of Lexington, Missouri and suffering losses elsewhere, 
+   the Confederate forces retreated to Arkansas and later Marshall, Texas, in the face of a largely 
+   reinforced Union Army.
+  
+  Though regular Confederate troops staged some large-scale raids into Missouri, the fighting in the 
+  state for the next three years consisted chiefly of guerrilla warfare. "Citizen soldiers" or 
+  insurgents such as Captain William Quantrill, Frank and Jesse James, the Younger brothers, 
+  and William T. Anderson made use of quick, small-unit tactics. Pioneered by the Missouri 
+  Partisan Rangers, such insurgencies also arose in portions of the Confederacy occupied by the
+   Union during the Civil War. Historians have portrayed stories of the James brothers' outlaw 
+   years as an American "Robin Hood" myth.[37] The vigilante activities of the Bald Knobbers of the 
+   Ozarks in the 1880s were an unofficial continuation of insurgent mentality long after the official 
+   end of the war, and they are a favorite theme in Branson's self-image.[38] 
+   These events heightened Confederate support within the state.
+   Governor Jackson appointed Sterling Price, president of the convention on secession, as head of the
+    new Missouri State Guard. In the face of Union General Lyon's rapid advance through the state, 
+    Jackson and Price were forced to flee the capital of Jefferson City on June 14, 1861. In Neosho,
+     Missouri, Jackson called the state legislature into session to call for secession. However, 
+     the elected legislative body was split between pro-Union and pro-Confederate. As such, few of 
+     the pro-unionist attended the session called in Neosho, and the ordinance of secession was quickly 
+     adopted. The Confederacy recognized Missouri secession on October 30, 1861.
+
+  With the elected governor absent from the capital and the legislators largely dispersed, the state
+   convention was reassembled with most of its members present, save twenty who fled south with
+    Jackson's forces. The convention declared all offices vacant and installed Hamilton Gamble as 
+    the new governor of Missouri. President Lincoln's administration immediately recognized Gamble's 
+    government as the legal Missouri government. The federal government's decision enabled raising 
+    pro-Union militia forces for service within the state and volunteer regiments for the Union Army.
+  
+  Fighting ensued between Union forces and a combined army of General Price's Missouri State Guard and
+   Confederate troops from Arkansas and Texas under General Ben McCulloch. After winning victories at 
+   the battle of Wilson's Creek and the siege of Lexington, Missouri and suffering losses elsewhere, 
+   the Confederate forces retreated to Arkansas and later Marshall, Texas, in the face of a largely 
+   reinforced Union Army.
+   kkkkkkkkkkkkvkkkvkkvkvkvkvkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkvkkkvkkvkvkvkvkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+kkkkkkkkkkkkvkkkvkkvkvkvkvkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkvkkkvkkvkvkvkvkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+  
+  Though regular Confederate troops staged some large-scale raids into Missouri, the fighting in the 
+  state for the next three years consisted chiefly of guerrilla warfare. "Citizen soldiers" or 
+  insurgents such as Captain William Quantrill, Frank and Jesse James, the Younger brothers, 
+  and William T. Anderson made use of quick, small-unit tactics. Pioneered by the Missouri 
+  Partisan Rangers, such insurgencies also arose in portions of the Confederacy occupied by the
+   Union during the Civil War. Historians have portrayed stories of the James brothers' outlaw 
+   years as an American "Robin Hood" myth.[37] The vigilante activities of the Bald Knobbers of the 
+   Ozarks in the 1880s were an unofficial continuation of insurgent mentality long after the official 
+   end of the war, and they are a favorite theme in Branson's self-image.[38] 
+   These events heightened Confederate support within the state.
+   Governor Jackson appointed Sterling Price, president of the convention on secession, as head of the
+    new Missouri State Guard. In the face of Union General Lyon's rapid advance through the state, 
+    Jackson and Price were forced to flee the capital of Jefferson City on June 14, 1861. In Neosho,
+     Missouri, Jackson called the state legislature into session to call for secession. However, 
+     the elected legislative body was split between pro-Union and pro-Confederate. As such, few of 
+     the pro-unionist attended the session called in Neosho, and the ordinance of secession was quickly 
+     adopted. The Confederacy recognized Missouri secession on October 30, 1861.
+
+  With the elected governor absent from the capital and the legislators largely dispersed, the state
+   convention was reassembled with most of its members present, save twenty who fled south with
+    Jackson's forces. The convention declared all offices vacant and installed Hamilton Gamble as 
+    the new governor of Missouri. President Lincoln's administration immediately recognized Gamble's 
+    government as the legal Missouri government. The federal government's decision enabled raising 
+    pro-Union militia forces for service within the state and volunteer regiments for the Union Army.
+  
+  Fighting ensued between Union forces and a combined army of General Price's Missouri State Guard and
+   Confederate troops from Arkansas and Texas under General Ben McCulloch. After winning victories at 
+   the battle of Wilson's Creek and the siege of Lexington, Missouri and suffering losses elsewhere, 
+   the Confederate forces retreated to Arkansas and later Marshall, Texas, in the face of a largely 
+   reinforced Union Army.
+  
+  Though regular Confederate troops staged some large-scale raids into Missouri, the fighting in the 
+  state for the next three years consisted chiefly of guerrilla warfare. "Citizen soldiers" or 
+  insurgents such as Captain William Quantrill, Frank and Jesse James, the Younger brothers, 
+  and William T. Anderson made use of quick, small-unit tactics. Pioneered by the Missouri 
+  Partisan Rangers, such insurgencies also arose in portions of the Confederacy occupied by the
+   Union during the Civil War. Historians have portrayed stories of the James brothers' outlaw 
+   years as an American "Robin Hood" myth.[37] The vigilante activities of the Bald Knobbers of the 
+   Ozarks in the 1880s were an unofficial continuation of insurgent mentality long after the official 
+   end of the war, and they are a favorite theme in Branson's self-image.[38] 
+   These events heightened Confederate support within the state.
+   Governor Jackson appointed Sterling Price, president of the convention on secession, as head of the
+    new Missouri State Guard. In the face of Union General Lyon's rapid advance through the state, 
+    Jackson and Price were forced to flee the capital of Jefferson City on June 14, 1861. In Neosho,
+     Missouri, Jackson called the state legislature into session to call for secession. However, 
+     the elected legislative body was split between pro-Union and pro-Confederate. As such, few of 
+     the pro-unionist attended the session called in Neosho, and the ordinance of secession was quickly 
+     adopted. The Confederacy recognized Missouri secession on October 30, 1861.
+     kkkkkkkkkkkkvkkkvkkvkvkvkvkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkvkkkvkkvkvkvkvkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+     kkkkkkkkkkkkvkkkvkkvkvkvkvkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkvkkkvkkvkvkvkvkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+  With the elected governor absent from the capital and the legislators largely dispersed, the state
+   convention was reassembled with most of its members present, save twenty who fled south with
+    Jackson's forces. The convention declared all offices vacant and installed Hamilton Gamble as 
+    the new governor of Missouri. President Lincoln's administration immediately recognized Gamble's 
+    government as the legal Missouri government. The federal government's decision enabled raising 
+    pro-Union militia forces for service within the state and volunteer regiments for the Union Army.
+  
+  Fighting ensued between Union forces and a combined army of General Price's Missouri State Guard and
+   Confederate troops from Arkansas and Texas under General Ben McCulloch. After winning victories at 
+   the battle of Wilson's Creek and the siege of Lexington, Missouri and suffering losses elsewhere, 
+   the Confederate forces retreated to Arkansas and later Marshall, Texas, in the face of a largely 
+   reinforced Union Army.
+  
+  Though regular Confederate troops staged some large-scale raids into Missouri, the fighting in the 
+  state for the next three years consisted chiefly of guerrilla warfare. "Citizen soldiers" or 
+  insurgents such as Captain William Quantrill, Frank and Jesse James, the Younger brothers, 
+  and William T. Anderson made use of quick, small-unit tactics. Pioneered by the Missouri 
+  Partisan Rangers, such insurgencies also arose in portions of the Confederacy occupied by the
+   Union during the Civil War. Historians have portrayed stories of the James brothers' outlaw 
+   years as an American "Robin Hood" myth.[37] The vigilante activities of the Bald Knobbers of the 
+   Ozarks in the 1880s were an unofficial continuation of insurgent mentality long after the official 
+   end of the war, and they are a favorite theme in Branson's self-image.[38] 
+
+
+</div>
+</div>
+<!-- end of  content  container -->
+</div>
+
+        
+  
+
