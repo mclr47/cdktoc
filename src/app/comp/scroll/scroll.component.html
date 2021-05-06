@@ -28,7 +28,11 @@
         <!-- <p>first scroll</p> -->
         <!-- <cdk-virtual-scroll-viewport class="example-viewport first-scroll"
         (mouseenter)="updateCurrentElement('scrollOne')" (scroll)="updateVerticalScroll($event)" #scrollOne> -->
-        <cdk-virtual-scroll-viewport class="example-viewport first-scroll" autosize
+        <!-- class="example-viewport first-scroll" -->
+        <cdk-virtual-scroll-viewport 
+        class="example-viewport first-scroll link-scroll-active"
+         autosize
+        
         [itemSize]="70" minBuffer="70px"
         maxBuffer="840px">
         <!-- minBufferPx="400"  maxBufferPx="425"

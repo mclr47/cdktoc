@@ -28,7 +28,7 @@ export class ObserveHashItemDirective implements OnInit, OnDestroy{
 
 		this.parent = parent;
 		this.elementRef = elementRef;
-        console.log(this.elementRef.nativeElement.id) 
+        // console.log(this.elementRef.nativeElement.id) 
 		// By default, we're going to assume that the host element is NOT intersecting.
 		// Then, we'll use the IntersectionObserver to asynchronously check for changes
 		// in viewport visibility.

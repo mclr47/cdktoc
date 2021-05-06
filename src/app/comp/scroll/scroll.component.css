@@ -3,7 +3,8 @@
     width: 200px;
     border: 1px solid black;
   } */
-  
+  /* @import "material-icons/iconfont/material-icons.css"; */
+  @import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
   .example-item {
     /* height: 9%; */
     /* height:9vh;  */
@@ -27,10 +28,10 @@
 
   }
   
-  .example-item-detail {
+  /* .example-item-detail {
     height: 18px;
     overflow: scroll;
-  }
+  } */
 /*  */
   
   .example-viewport .cdk-virtual-scroll-content-wrapper {
@@ -66,21 +67,43 @@
   .first-scroll::marker{
    scrollbar-arrow-color: darkred;
    content: "{";
-   color:dodgerblue;
+   color:rgb(2, 28, 14);
   }
-  .first-scroll div h3::marker{
+  /* .first-scroll div h3::marker{ */
     /* scrollbar-arrow-color: darkred; */
-    content: "{";
-    color:dodgerblue;
+    /* content: "{";
+    color:dodgerblue; */
     /* cursor: pointer; */
-   }
+   /* } */
    .first-scroll div h3:hover{
     /* scrollbar-arrow-color: darkred; */
     content: "{";
-    color:dodgerblue;
+    color:rgb(0, 72, 255);
     cursor: pointer;
    }
+   .first-scroll div h3:hover::marker{
+    /* scrollbar-arrow-color: darkred; */
+    content: "{";
+    color:blue;
+    cursor: pointer;
 
+   }
+   .first-scroll div h3:current::marker{
+    /* scrollbar-arrow-color: darkred; */
+    content: "{";
+    color:rgb(219, 17, 17);
+    cursor: pointer;
+   }
+   /*  */
+   .link-scroll-active 
+   ::marker{
+    /* scrollbar-arrow-color: darkred; */
+    content: "{";
+    color:rgb(8, 95, 46);
+    cursor: pointer;
+   }
+   /*  */
+/* 
 ul li::marker{
   color:green;
   background-color: khaki;
@@ -89,7 +112,20 @@ ul li::marker{
 ul li:hover::marker{
   color:midnightblue;
   font-weight: 900;
+} */
+
+/* .activeIndex  h3 ::marker{
+  color:rgb(219, 17, 17) !important ;
+  background-color: rgb(140, 240, 170);
+  font-weight: 900;
+  display: list-item;
 }
+.activeIndex  h3:hover ::marker{
+  color:slategray !important ;
+  background-color: rgb(202, 240, 140);
+  font-weight: 900;
+  display: list-item;
+} */
 /* .mainContainer{
   overflow: auto;
   white-space:nowrap;
@@ -103,6 +139,7 @@ overscroll-behavior-x:inherit; */
  overscroll-behavior: inherit; 
 display:inline-flexbox;
 overflow: auto;
+font-family: Itim;
 /* white-space: nowrap; */
   }
 
@@ -113,9 +150,26 @@ overflow: auto;
   }
   .activeIndex::marker{
     background-color: rgb(221, 38, 13);
-    color: yellow;
+    color: rgb(255, 0, 76);
     font-weight: 900;
   }
+  .activeIndex:hover::marker{
+    background-color: rgb(221, 38, 13);
+    color: rgba(43, 255, 0, 0.542);
+    font-weight: 900;
+    background-color: tan !important;
+  }
+  .activeIndex:hover{
+    background-color: rgb(221, 38, 13);
+    color: rgba(43, 255, 0, 0.542);
+    font-weight: 900;
+    background-color: tan !important;
+  }
+  /* .activeIndex::{
+    background-color: rgb(221, 38, 13);
+    color: yellow;
+    font-weight: 900;
+  } */
   
   /* .router-link-active
   {background-color: orange;
@@ -131,20 +185,20 @@ display: list-item;
 content:"#";
 
 } */
-h1{
+/* h1{ */
     /* counter-increment: h3; */
-    display: list-item;
+    /* display: list-item; */
     /* display: -moz-marker; */
-  }
+  /* } */
   
-  h1::marker {
+  /* h1::marker {
     display: list-item;
-    content: "*" ;
-    /* counter(h3) " "; */
-    color: lightsalmon;
-    font-weight: bold;
+    content: "*" ; */
+    /* counter(h1) " "; */
+    /* color: lightsalmon;
+    font-weight: bold; */
     /* list-style:square */
-  }
+  /* } */
   
   .headerMarker {
     /* counter-reset: h3; */
@@ -157,7 +211,7 @@ h1{
     display: list-item;
   }
   
-  h3::marker {
+    h3::marker {
     display: list-item;
     content: "*" ;
     /* counter(h3) " "; */
@@ -170,6 +224,10 @@ h1{
     color:green;
     border:indigo solid 2px;
   }
+  /* router-link-active ::marker{
+    color:crimson;
+  } */
+
 
   .hashItem{
     background-color: rgb(233, 220, 202);
@@ -201,6 +259,9 @@ h1{
   /* display:-webkit-inline-flex; */
   /* display:-moz-grid-group; */
   display:-moz-box;
+  /* transform: translateZ(0);
+  will-change: scroll-position;
+  -webkit-overflow-scrolling: touch; */
   /* flex-direction: row; */
   /* overflow: scroll; */
 }
@@ -209,3 +270,8 @@ h1{
   flex-direction: column;
   overflow: scroll;
 } */
+
+::ng-deep .cdk-virtual-scroll-content-wrapper {
+  overflow-y: scroll;
+  overflow-x: scroll;
+}

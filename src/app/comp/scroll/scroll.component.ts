@@ -110,13 +110,13 @@ export class ScrollComponent implements OnInit , AfterViewInit{
       
 console.log(decodeURIComponent(this.platformLocation.hash.replace(/^#\/scroll#/, '')))
 this.router.events.pipe(filter(element => element instanceof ScrollDispatcher)).subscribe((element: any) => {
-  console.log(element.anchor);
+  // console.log(element.anchor);
 //   this.router.events.pipe(
 //     filter(event => event instanceof NavigationEnd)
 // ).subscribe((ev)=>{console.log(ev.)})
 });
-console.log(document.documentElement.clientHeight )
-console.log( window.innerHeight)
+console.log(document.documentElement.clientHeight );
+// console.log( window.innerHeight);
 // this.viewPort.scrollToIndex(10);
   }
 
@@ -153,8 +153,8 @@ console.log( window.innerHeight)
    
  fromEvent(window, 'resize').subscribe(()=>{
    this.viewPort.checkViewportSize();
-   console.log(window.devicePixelRatio );
-   console.log (window.visualViewport.scale)
+  //  console.log(window.devicePixelRatio );
+  //  console.log (window.visualViewport.scale);
    
  })
 
@@ -175,11 +175,11 @@ console.log( window.innerHeight)
 
   }
   routerLinkActiveScroll(index){
-    console.log(index)
+    // console.log(index)
   }
 
  locationChangeListener(){
-   console.log(this.activatedRoute.fragment)
+  //  console.log(this.activatedRoute.fragment)
  }
 
  emitHash(hash: string){
@@ -191,10 +191,11 @@ console.log( window.innerHeight)
   //   error(msg) {console.log('error in Observing hash ', msg);}
      
   // });
-  console.log(hash);
+  // *****below content commented out for testing hash limits 
+  // console.log(hash);
   this.scroll(this.scrollToPage.indexOf(hash));
   this.indexOfCurrentHash =  this.scrollToPage.indexOf(hash)   
-
+  // **********above to be uncommented after testing is over
  };
  
 
@@ -217,9 +218,11 @@ console.log( window.innerHeight)
  
  
 
-
+ /*  I am no longer using this function but I could have used this to highlight the <<non-central hash 
+ fragments in the cdk-scroll-viewport navigation     */
 syncWindowToCdk(eventHash:HashExist)
-  {   console.log(eventHash);
+  {   
+    // console.log(eventHash);
     
    if (eventHash.hashVisible == true){
      this.scroll(this.scrollToPage.indexOf(eventHash.hashName));

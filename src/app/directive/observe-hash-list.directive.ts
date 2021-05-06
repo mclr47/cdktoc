@@ -20,7 +20,7 @@ increasingColor = "rgba(40, 40, 190, ratio)";
 decreasingColor = "rgba(190, 40, 40, ratio)";
 //************************************************************
 
-
+  // private htmlElement :HTMLElement; 
   private mapping: Map<Element, Function>;
 	private observer: IntersectionObserver;
   constructor(
@@ -30,7 +30,7 @@ decreasingColor = "rgba(190, 40, 40, ratio)";
     // private activatedRoute:ActivatedRoute
     
   ) { 
-
+  // this.htmlElement = new HTMLElement;
   
   this.mapping = new Map();
 
@@ -43,33 +43,10 @@ decreasingColor = "rgba(190, 40, 40, ratio)";
 
         // ( callback && callback( entry.isIntersecting ) );
           
-        //   const elm = document.querySelector<HTMLElement>(entry.target.id)!;
-         // entry.target.id
-         //  entry.time
-          //  console.log(entry.intersectionRatio);
-          //  const intersectionRatioElem=entry.intersectionRatio
-          //  if (entry.intersectionRatio > this.prevRatio) {
-          //   //  entry.target.parentElement.style.backgroundColor = this.increasingColor.replace("ratio", entry.intersectionRatio.toString());
-            
-          //   console.log(entry.intersectionRect.top)
-          // } else {
-          //   entry.target.parentElement.style.backgroundColor =
-          //    this.decreasingColor.replace("ratio", entry.intersectionRatio.toString());
-          // }
-          // ***************************************
-      //      if( entry.boundingClientRect.x.valueOf() ==
-      //      document.documentElement.clientWidth/2 || window.innerWidth/2){
-      //        console.log(" Horizontally --> in the midddle of the screen");
-      //        console.log(entry.boundingClientRect.x.valueOf());
-      //      }
-      //      if(entry.boundingClientRect.y.valueOf() == 
-      //      document.documentElement.clientHeight/2 || window.innerHeight/2){
-      //       console.log(" Vertically --> in the midddle of the screen")
-      //       console.log(entry.target.attributes)
-      //      }
 
-      //     console.log(entry.boundingClientRect.x.valueOf());
-      //     console.log(entry.rootBounds.y.valueOf());
+          // ***************************************
+    
+
       //     // 
       // console.log(entry.target.id +" " +"y value " +entry.boundingClientRect.y.valueOf())
       // console.log(entry.intersectionRatio)
@@ -77,49 +54,43 @@ decreasingColor = "rgba(190, 40, 40, ratio)";
       // console.log(entry.rootBounds)
       // console.log(entry.time);
           //******************************** */ 
-          //   entry.boundingClientRect
-    //   entry.intersectionRatio
-    //   entry.intersectionRect
-    //   entry.isIntersecting
-    //   entry.rootBounds
-    //   entry.target
-    //   entry.time  
+        
     //************************* */ 
-    if(entry.isIntersecting && (
-      entry.intersectionRect.top <= window.innerHeight/2 && 
-      entry.intersectionRect.bottom >= window.innerHeight/2
-      ||
-      entry.boundingClientRect.top <= document.documentElement.clientHeight/2 &&
-      entry.intersectionRect.bottom>= document.documentElement.clientHeight/2)
-      ){
-      // entry.boundingClientRect.top > 0 && entry.boundingClientRect <= 0 ||
-      // entry.boundingClientRect.top > 75 && entry.boundingClientRect>=0
-      // if( entry.boundingClientRect.bottom<=0 && entry.boundingClientRect.top>0 )
-      // { this.currentHash.emit(entry.target.id); }
-      console.log(entry.target.id.toString());
-      // this.currentHash.emit(entry.target.id.toString())
+    // https://github.com/w3c/IntersectionObserver/issues/124
+    // pxwee5 commented on Mar 24, 2019 •
+   
+    // if (entry.isIntersecting) {
+    //   if (
+    //     entry.rootBounds.height < entry.boundingClientRect.height ||
+    //     entry.intersectionRatio == 1
+    //   ) {
+    //     this.renderImage();
+    //   }
     // }
-  //   console.log( entry.target.id ,' entry.boundingClientRect.top: '+ entry.boundingClientRect.top +
-  //   ' entry.boundingClientRect.bottom: ' ,entry.boundingClientRect.bottom)
-  //   console.log( entry.target.id , ' entry.intersectionRect.top', entry.intersectionRect.top +"********"
-  //  +'entry.intersectionRect.bottom: ' + entry.intersectionRect.bottom)
-    // if (entry.boundingClientRect.top <= window.innerHeight/2 && 
-    //   entry.boundingClientRect.bottom >= window.innerHeight/2 )
-    // if (entry.intersectionRect.top <= window.innerHeight/2 && 
-    //     entry.intersectionRect.bottom >= window.innerHeight/2 )
-
-    //   // ||
-    //   // entry.boundingClientRect.top <= document.documentElement.clientHeight/2 &&
-    //   // entry.intersectionRect.bottom>= document.documentElement.clientHeight/2
-    // {
-  // const intersectionRatio = entry.intersectionRatio;
+   
+    // *********************** 
+  //  console.log(entry.rootBounds)
+   console.log(window.innerHeight);
+    if(entry.isIntersecting )
+     {      console.log(entry.target.id + "**Client"+entry.boundingClientRect.y
+     +"**y*"+entry.intersectionRect.y+"**top*"+entry.boundingClientRect.top
+     +"**bottom*"+entry.boundingClientRect.bottom+ "%%%%%"+ entry.intersectionRatio);
+      //  (
+        //  (entry.boundingClientRect.top < window.innerHeight/2 &&
+        //   entry.boundingClientRect.bottom >= window.innerHeight/2 ) 
+         if (entry.boundingClientRect.top <= entry.rootBounds.height / 2 &&
+            entry.boundingClientRect.bottom >=  entry.rootBounds.height /2) 
+        
+      {
+       
   (entry.target as HTMLElement)
-    .style.backgroundColor = this.increasingColor.replace("ratio", entry.intersectionRatio.toString());
-    // "green" ;
+    .style.backgroundColor = 
+     this.increasingColor.replace("ratio", entry.intersectionRatio.toString());
+   
     // const currentHash  = entry.target.id.toString();
     // console.log(this.router.getCurrentNavigation().extras.fragment)
     // this.activatedRoute.fragment.subscribe({
-    //   next(eee) {
+    //   next(currentHash) {
     //     console.log('Current Position: ', entry.target.id.toString());
         
     //   },
@@ -132,11 +103,18 @@ decreasingColor = "rgba(190, 40, 40, ratio)";
     // this.router.navigate(['./scroll'],{fragment: entry.target.id.toString()});
     this.currentHash.emit((entry.target as HTMLElement).id)
     }
-    else {
+    else if (entry.boundingClientRect.top >entry.rootBounds.height / 2 ||
+      entry.boundingClientRect.bottom < entry.rootBounds.height /2 )
+     {
       (entry.target as HTMLElement)
-      .style.backgroundColor = "orange"
+      .style.backgroundColor = "orange";
+      console.log(entry.target.id + "**Client"+entry.boundingClientRect.y
+        +"**y*"+entry.intersectionRect.y+"**top*"+entry.boundingClientRect.top
+        +"**bottom*"+entry.boundingClientRect.bottom +"%%%%%"+ entry.intersectionRatio);
+
     }
-  
+    
+            }
 
     //************************** */  
           this.prevRatio = entry.intersectionRatio;
@@ -156,7 +134,8 @@ decreasingColor = "rgba(190, 40, 40, ratio)";
       // threshold:[ 1]
       //  threshold:[0.3, 0.6]
       // threshold:1
-      threshold: this.buildThresholdList()
+      // threshold: 0.0
+       threshold: this.buildThresholdList()
     }
   );
 
@@ -172,6 +151,7 @@ public add( element: HTMLElement, callback: Function ) : void {
 
   this.mapping.set( element, callback );
   this.observer.observe( element );
+  // this.htmlElement.setAttribute
 
 }
 // ************************************
@@ -179,7 +159,7 @@ public add( element: HTMLElement, callback: Function ) : void {
 // 
  buildThresholdList() {
   let thresholds = [];
-  let numSteps = 20;
+  let numSteps = 100;
 
   for (let i=1.0; i<=numSteps; i++) {
     let ratio = i/numSteps;
@@ -236,6 +216,8 @@ public remove( element: HTMLElement ) : void {
   this.observer.unobserve( element );
 
 }
+
+
 
 }
 
